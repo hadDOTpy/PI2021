@@ -20,7 +20,7 @@
 			right: 0;
 			left: 0;
 			display: inline-flex;
-			box-shadow: 0 0 1em rgba(0,0,0,0.5);;
+			box-shadow: 0 0 1em rgba(0,0,0,0.5);
 		}
 		.item {
 			line-height: 175%;
@@ -84,12 +84,13 @@
 			margin-right: auto;
 			overflow: hidden;
 			text-align: center;
+			box-shadow: 0 0 1.5em rgba(0,0,0,0.7);
 		}
 		.slides {
 			width: 2100px;
 			height: 100%;
 			position: relative;
-			transition: 1.5s;
+			transition: 1.3s;
 		}
 		.slideimg {
 			float: left;
@@ -106,6 +107,9 @@
 			width: 10px;
 			border-radius: 5px;
 			background-color: white;
+		}
+		.buttonslide:hover {
+			background-color: #9ec299;
 		}
 		#sl1:target ~ .slides {
 			left: 0px;
