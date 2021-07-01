@@ -23,23 +23,32 @@
 			box-shadow: 0 0 1em rgba(0,0,0,0.5);
 		}
 		.item {
-			line-height: 175%;
+			height: 60px;
+         overflow: hidden;
 		}
-		.listali {
+		.listaul {
+			padding-top: 20px;
+         margin-top: 0px;
+         margin-bottom: 0px;
+      }
+      
+      .listali {
 			font-family: 'Libre Franklin', sans-serif;
 			list-style: none;
 			display: inline;
 			font-size: 15px;
 			margin-right: 10px;
-			padding:  21px;
-			;
+			padding-top: 100%;
+			padding-bottom: 100%;
+         padding-left: 21px;
+         padding-right: 21px;
 		}
 		.logo {
 			margin-left: 10%;
 			margin-top: 0.5%;
 		}
 		.title {
-			padding-left: 1%;
+			padding-left: 0.3%;
 			line-height: 0%;
 			margin-right: 15px;
 			font-size: 43px;
@@ -51,7 +60,7 @@
 		}
 		.dropdown {
 			margin-left: 35%;
-			border: none;
+         border: none;
 		}
 		.conteudodropdown {
 			display: none;
@@ -62,6 +71,9 @@
 			top: 60px;
 			font-family: 'Libre Franklin', sans-serif;
 		}
+      .img_profile {
+         margin-left: 100%;
+      }
 		.conteudodropdown a {
   			color: black;
   			padding: 10px 14px;
@@ -125,7 +137,7 @@
 <body>
 	<nav>
 		<div class="menu">
-			<img scr="../imagens/logo_pequena.png" class="logo" alt="logo de gato">
+         <img src="../imagens/logo_pequena.png" class="logo" alt="logo de gato">
 			<h1 class="title">Dotis</h1>
 			<div class="item">
 				<ul class="listaul">
@@ -135,7 +147,7 @@
 				</ul>
 			</div> 
 			<div class="dropdown">
-				<img src="../imagens/icon_profile.png" alt="pessoa">
+				<img src="../imagens/icon_profile.png" class="img_profile" alt="pessoa">
 				<div class="conteudodropdown">
 					<a href="#">Login</a>
     				<a href="#">Cadastro</a>
