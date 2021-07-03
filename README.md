@@ -11,5 +11,5 @@
 <h2>Utilização</h2>
 <p align="justify">Para abrir o projeto basta fazer download da pasta compactada e abrir o arquivo "index.html" no seu navegador.</p>
 <h4 align="center"> 
-	🚧  Em construção...  🚧
+	🚧  Em desenvolvimento...  🚧
 </h4>
