@@ -10,6 +10,13 @@
 </ul>
 <h2>Utilização</h2>
 <p align="justify">Para abrir o projeto basta fazer download da pasta compactada e abrir o arquivo "index.html" no seu navegador.</p>
+<h2>Participantes</h2>
+<ul>
+	<li><a href="https://github.com/ingguk">Ingrid Pache</a></li>
+	<li><a href="https://github.com/FernandaBorges">Fernanda Borges</a></li>
+	<li><a href="https://github.com/gabrieljoaorosa1">Gabriel João Rosa</a></li>
+	<li><a href="https://github.com/hadDOTpy">Henrique Dalposso</a></li>
+</ul>
 <h4 align="center"> 
 	🚧  Em desenvolvimento...  🚧
 </h4>
