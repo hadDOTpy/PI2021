@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+    <style>
+    *{
+        transition: all 0.6s;   
+    }
+
+    html {
+        height: 100%;
+    }
+
+    body{
+        font-family: 'Lato', sans-serif;
+        color: #888;
+        margin: 0;
+    }
+
+    #main{
+        display: table;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .fof{
+        display: table-cell;
+        vertical-align: middle;
+        /* mix-blend-mode: difference; */
+    }
+
+    .fof h1{
+        font-size: 50px;
+        display: inline-block;
+        padding-right: 12px;
+        animation: type .5s alternate infinite;
+    }
+
+    .fof h1{background-color: white; filter: opacity(.75); display: inline;}
+    .fof h2{background-color: white; filter: opacity(.75); display: inline;}
+    .fof h3{background-color: white; filter: opacity(.75); display: inline;}
+    .fof h4{background-color: white; filter: opacity(.75); display: inline;}
+
+    @keyframes type{
+        from{box-shadow: inset -3px 0px 0px #888;}
+        to{box-shadow: inset -3px 0px 0px transparent;}
+    }
+    </style>
+    <script>
+    // Cria a função
+    function CatfyGet(url) {
+
+        // Cria a variavel como uma XMLHttpRequest()
+        let request = new XMLHttpRequest();
+        
+        // Abre a request como GET
+        request.open('GET', url, false);
+
+        // Envia o request
+        request.send();
+        
+        // resposta = a resposta do request
+        let response = request.responseText;
+
+        // Desserializa a resposta da request
+        let herobrine = JSON.parse(response);
+        
+        // url = url recebida
+        let amongoosUrl = herobrine[0].url;
+
+        return(amongoosUrl);
+    }
+
+    window.onload = function(){
+        let gato = CatfyGet('https://api.thecatapi.com/v1/images/search');
+        console.log(gato)
+        document.getElementsByTagName('body')[0].style.backgroundImage  = `url('${gato}')`;
+        document.getElementsByTagName('body')[0].style.backgroundRepeat = `no-repeat`;
+        document.getElementsByTagName('body')[0].style.backgroundSize   = `cover`;
+
+        // document.getElementsByTagName('body')[0].style.filter   = `filter(5px)`;
+        // document.getElementsByTagName('body')[0].style.filter   = `opacity(.3)`;
+    }
+ 
+
+    </script>
+
+</head>
+<body>
+    <div id="main">
+    	<div class="fof">
+        		<h1>Error 404</h1><br>
+                <h2>Talvez os gatos tenham estraviado a página que você procurava</h2><br>
+                <h2>Ou talvez ela nunca tenha existido...</h2><br><br>
+                <h3>Se você acha que isso é um erro contate o suporte</h3>
+    	</div>
+</div>
+</body>
+</html>
