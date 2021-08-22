@@ -9,7 +9,8 @@
 	<li>Software de ilustração MediBang Paint</li>
 </ul>
 <h2>Utilização</h2>
-<p align="justify">Para abrir o projeto basta fazer download da pasta compactada e abrir o arquivo "index.html" no seu navegador.</p>
+<p align="justify">Para abrir a versão estável mais recente clone o repositório e abra o arquivo "index.html" no seu navegador.</p>
+<p align="justify">Atualmente os arquivos em Flask estão em fase Beta, execute cada arquivo python separadamente.</p>
 <h2>Contribuidores</h2>
 <ul>
 	<li><a href="https://github.com/ingguk">Ingrid Pache</a></li>
