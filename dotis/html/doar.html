@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 	<title>Dotis</title>
@@ -9,78 +10,91 @@
 	<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 	<link href="../estilos/estilo.css" rel="stylesheet">
 	<style type="text/css">
-		.perfil {
-		position: absolute;
-		width: 350px;
-		height: 525px;
-		background: white;
-		top: 25%;
-		left: 39%;
-		border-radius: 5px;
-		box-shadow: 0 0 1em rgba(0,0,0,0.3);
-		}
-		.animal {
-			width: 300px;
-			height: 250px;
-		}
-		.preview-img {
-			width: 300px;
-			height: 225px;
-			margin-top: 15px;
-			margin-left: 25px;
-		}
-		.imagem {
+		#branco {
 			position: absolute;
-			margin-top: 100px;
-			margin-left: 145px;
-			opacity: 0.7;
-			cursor: pointer;
+			width: 80%;
+			height: 100%;
+			background-color: white;
+			top: 150px;
+			left: 10%;
+			border-radius: 5px;
+			box-shadow: 0 0 1em rgba(0,0,0,0.3);
 		}
-		label { 
+		#titulo {
+			margin-top: 20px;
+			margin-left: 2%;
+			background-color: #b3cfaf;
+			margin-right: 2%;
 			font-family: 'Libre Franklin', sans-serif;
-			margin-left: 10px;
+			font-size: 30px;
+			padding-top: 0.2px;
+			padding-bottom: 0.2px;
 		}
-		input {
-			margin-bottom: 15px;
+		#legenda {
+			margin-left: 4%;
+			font-family: 'Libre Franklin', sans-serif;
+			font-size: 20px;
+			text-style: bold;
+		}
+		#preview-img {
+			width: 150px;
+			height: 200px;
+			margin-left: 300px;
+			margin-top: 30px;
+		}
+		#imagem {
+			position: absolute;
+			margin-left: 344px;
+			margin-top: 95px;
+		}
+		#esquerda {
+			position: absolute;
+			margin-top: -208px;
+			margin-left: 520px;
+		}
+		input[type=text] {
+			margin-top: 6px;
+			margin-bottom: 11px;
+			height: 25px;
+			font-family: 'Libre Franklin', sans-serif;
+			width: 264px;
+		}
+		textarea {
+			margin-top: 6px;
+			max-width: 250px;
+			min-width: 250px;
+			max-height: 130px;
+			min-height: 130px;
+			font-family: 'Libre Franklin', sans-serif;
+			padding: 10px;
+		}
+		label {
+			font-family: 'Libre Franklin', sans-serif;
+		}
+		#direita {
+			position: absolute;
+			margin-left: 300px;
+			top: 445px;
 		}
 		input[type=radio] {
 			margin-top: 8px;
-			margin-left: 25px;
-		}
-		.dif {
-			margin-left: 5px;
+			margin-bottom: 12px;
+			left: 10px;
 		}
 		input[type=submit] {
-			margin-top: 20px;
-			margin-left: 100px;
-			width: 100px;
-			height: 50px;
+			position: absolute;
+			margin-top: 373px;
+			margin-left: 170px;
+			width: 70px;
+			height: 35px;
 			font-family: 'Libre Franklin', sans-serif;
-		}
-		input[type=text] {
-			height: 25px;
-			font-family: 'Libre Franklin', sans-serif;
-		}
-		.infos {
-			width: 300px;
-			height: 265px;
-			background-color: #b3cfaf;
-			margin-left: 25px;
-			border-radius: 5px;
-		}
-		h3 {
-			font-family: 'Libre Franklin', sans-serif;
-			font-size: 22px;
-			margin-top: 100px;
-			margin-left: 10%;
-			color: #6c8269;
 		}
 	</style>
 </head>
 <body>
 	<nav>
 		<div class="menu">
-         <img src="../imagens/logo_pequena.png" class="logo" alt="logo de gato">
+         	<img src="../imagens/logo_pequena.png" class="logo" alt="logo de gato">
 			<h1><a href="index.html" class="title">Dotis</a></h1>
 			<div class="item">
 				<ul class="listaul">
@@ -104,58 +118,59 @@
 			</div>
 		</div>
 	</nav>
-	<!--Introdução-->
-	<h3>Para doar um bichinho, basta preencher as informações abaixo. Não esqueça de colocar uma foto dele!</h3>
-	<!--Modelo de perfil dos animais-->
-		<div class="perfil">
-			<div class="animal">
-				<form>
-					<img src="../imagens/icon_upload.png" class="imagem" width="65px">
-					<input class="arquivo" type="file" accept="image/*" hidden>
-					<img class="preview-img">
-				</form>				
-				<!--Script para "transformar" o file em um botão-->
-				<script type="text/javascript">
-					const $ = document.querySelector.bind(document);
-					const previewImg = $('.preview-img');
-					const fileChooser = $('.arquivo');
-					const fileButton = $('.imagem');
-
-					fileButton.onclick = () => fileChooser.click();
-
-					fileChooser.onchange = e => {
-    					const fileToUpload = e.target.files.item(0);
-    					const reader = new FileReader();
-    					reader.onload = e => previewImg.src = e.target.result;
-    					reader.readAsDataURL(fileToUpload);
-					};
-				</script>
-			</div>
-			<div class="infos">
-				<form >
-					<label for="anome" >Nome:</label>
-					<input type="text" name="anome" id="anome" style="margin-top: 5px; margin-left: 5px;" required="required"><br>
-					<label for="aidade" >Idade:</label>
-					<input type="text" name="aidade" required="required" style="margin-left: 8px;"><br>
-					<label>É macho ou fêmea?</label><br>	
-					<input type="radio" name="sexo" value="fem" required="required">
-					<label for="fem" class="dif">Fêmea</label>
-					<input type="radio" name="sexo" value="macho" required="required">
-					<label for="macho" class="dif">Macho</label><br>
-					<label>É castrado?</label><br>
-					<input type="radio" name="castracao" value="sim" required="required">
-					<label for="sim" class="dif">Sim</label>
-					<input type="radio" name="castracao" value="nao" required="required" style="margin-left: 48px;">		
-					<label for="nao" class="dif">Não</label><br>
-					<label>É vacinado?</label><br>
-					<input type="radio" name="vacinacao"  value="sim2" required="required">
-					<label for="sim2" class="dif">Sim</label>
-					<input type="radio" name="vacinacao" class="dif" value="nao2" required="required" style="margin-left: 48px;">
-					<label for="nao2" class="dif">Não</label><br>
-					<input type="submit" value="Enviar">
-				</form>
-			</div>	
+	</nav>
+	<div id="branco">
+		<div id="titulo">
+			<h1 id="titulo">Doe um Animal</h1>
 		</div>
+		<p id="legenda">Para cadastrar um animal no site, é necessário preencher todas as informações abaixo e ter o seu perfil pessoal completo.</p>
+		<form>
+			<img src="../imagens/icon_upload.png" id="imagem" width="65px">
+			<input id="arquivo" type="file" accept="image/*" hidden>
+			<img id="preview-img">
+			<div id="esquerda">
+				<label for="anome" >Nome:</label><br>
+				<input type="text" name="anome" id="anome"required="required"><br>
+				<label for="aidade" >Idade:</label><br>
+				<input type="text" name="aidade" required="required"><br>
+				<label for="descricao">Descreva o animal brevemente:</label><br>
+				<textarea id="descricao" name="descricao" rows="5" cols="33" required="" maxlength="250">
+				</textarea>
+			</div>
+			<div id="direita">
+				<label>Sexo:</label><br>
+				<input type="radio" name="sexo" value="fem" required="required">
+				<label for="fem" class="dif">Fêmea</label>
+				<input type="radio" name="sexo" value="macho" required="required">
+				<label for="macho" class="dif">Macho</label><br>
+				<label>É castrado?</label><br>
+				<input type="radio" name="castracao" value="sim" required="required">
+				<label for="sim" class="dif">Sim</label>
+				<input type="radio" name="castracao" value="nao" required="required" style="margin-left: 48px;">		
+				<label for="nao" class="dif">Não</label><br>
+				<label>É vacinado?</label><br>
+				<input type="radio" name="vacinacao"  value="sim2" required="required">
+				<label for="sim2" class="dif">Sim</label>
+				<input type="radio" name="vacinacao" class="dif" value="nao2" required="required" style="margin-left: 48px;">
+				<label for="nao2" class="dif">Não</label><br>
+			</div>
+			<input type="submit" value="Enviar">
+		</form>		
 	</div>
+	<!--Script para "transformar" o file em um botão-->
+	<script type="text/javascript">
+		const $ = document.querySelector.bind(document);
+		const previewImg = $('#preview-img');
+		const fileChooser = $('#arquivo');
+		const fileButton = $('#imagem');
+
+		fileButton.onclick = () => fileChooser.click();
+
+		fileChooser.onchange = e => {
+    		const fileToUpload = e.target.files.item(0);
+    		const reader = new FileReader();
+    		reader.onload = e => previewImg.src = e.target.result;
+    		reader.readAsDataURL(fileToUpload);
+			};
+	</script>
 </body>
-</html>
