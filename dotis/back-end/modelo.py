@@ -36,6 +36,6 @@ class Pet(db.Model):
           "idade" : self.idade,
           "sexo" : self.sexo,
           "castracao" : self.castracao,
-          "vacinas" : self.vacinas,
+          "vacinas" : self.vacinas
           "descricao" : self.descricao	
         }        
