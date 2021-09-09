@@ -5,7 +5,11 @@
 	<li>Linguagem de marcação HTML</li>
 	<li>Linguagem de estilização CSS</li>
 	<li>Linguagem de programação Javascript</li>
+	<li>Framework Flask</li>
+	<li>Linguagem SQLite</li>
+	<li>Biblioteca SqlAlchemy</li>
 	<li>Software Sublime Text</li>
+	<li>Software Visual Studio Code</li>
 	<li>Software de ilustração MediBang Paint</li>
 </ul>
 <h2>Utilização</h2>
