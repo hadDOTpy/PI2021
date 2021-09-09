@@ -1,5 +1,6 @@
 from config import *
-from modelo import Planta
+from modelo import Usuario
+from modelo import Pet
 
 @app.route("/")
 def padrao():
