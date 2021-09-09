@@ -26,6 +26,7 @@ class Pet(db.Model):
 	sexo = db.Column(db.String(254))
 	castracao = db.Column(db.String(254))
 	vacinas = db.Column(db.String(254))
+	descricao = db.Column(db.String(254))
 
 	def json(self):
         return {
@@ -35,5 +36,6 @@ class Pet(db.Model):
           "idade" : self.idade,
           "sexo" : self.sexo,
           "castracao" : self.castracao,
-          "vacinas" : self.vacinas
+          "vacinas" : self.vacinas,
+          "descricao" : self.descricao	
         }        
