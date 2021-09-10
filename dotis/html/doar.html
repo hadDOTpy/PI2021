@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 	<title>Dotis</title>
@@ -9,12 +10,16 @@
 	<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 	<link href="../estilos/estilo.css" rel="stylesheet">
 	<style type="text/css">
+		body, html {
+			height: 100%;
+		}
 		#branco {
 			position: absolute;
 			width: 80%;
 			height: 100%;
+			min-height: 100%;
 			background-color: white;
-			top: 150px;
+			top: 23%;
 			left: 10%;
 			border-radius: 5px;
 			box-shadow: 0 0 1em rgba(0,0,0,0.3);
@@ -30,27 +35,30 @@
 			padding-bottom: 0.2px;
 		}
 		#legenda {
-			margin-left: 4%;
+			margin-left: 2%;
+			margin-right: 2%;
 			font-family: 'Libre Franklin', sans-serif;
 			font-size: 20px;
 			text-style: bold;
 		}
+		#position {
+			position: relative;
+			margin-left: 25%;
+			top: 2%;
+		}
 		#preview-img {
 			width: 150px;
 			height: 200px;
-			margin-left: 300px;
-			margin-top: 30px;
 		}
 		#imagem {
 			position: absolute;
-			margin-left: 344px;
-			margin-top: 95px;
-			cursor: pointer;
+			margin-top: 68px;
+			margin-left: 43px;
 		}
 		#esquerda {
-			position: absolute;
-			margin-top: -208px;
-			margin-left: 520px;
+			position: relative;
+			left: 215px;
+			top: -208px;
 		}
 		input[type=text] {
 			margin-top: 6px;
@@ -72,9 +80,8 @@
 			font-family: 'Libre Franklin', sans-serif;
 		}
 		#direita {
-			position: absolute;
-			margin-left: 300px;
-			top: 445px;
+			position: relative;
+			top: -300px;
 		}
 		input[type=radio] {
 			margin-top: 8px;
@@ -82,13 +89,12 @@
 			left: 10px;
 		}
 		input[type=submit] {
-			position: absolute;
-			margin-top: 373px;
-			margin-left: 170px;
+			position: relative;
+			left: 300px;
+			top: -345px;
 			width: 70px;
 			height: 35px;
 			font-family: 'Libre Franklin', sans-serif;
-			cursor: pointer;
 		}
 	</style>
 </head>
@@ -125,38 +131,40 @@
 			<h1 id="titulo">Doe um Animal</h1>
 		</div>
 		<p id="legenda">Para cadastrar um animal no site, é necessário preencher todas as informações abaixo e ter o seu perfil pessoal completo.</p>
-		<form>
-			<img src="../imagens/icon_upload.png" id="imagem" width="65px">
-			<input id="arquivo" type="file" accept="image/*" hidden>
-			<img id="preview-img">
-			<div id="esquerda">
-				<label for="anome" >Nome:</label><br>
-				<input type="text" name="anome" id="anome"required="required"><br>
-				<label for="aidade" >Idade:</label><br>
-				<input type="text" name="aidade" required="required"><br>
-				<label for="descricao">Descreva o animal brevemente:</label><br>
-				<textarea id="descricao" name="descricao" rows="5" cols="33" required="" maxlength="250">
-				</textarea>
-			</div>
-			<div id="direita">
-				<label>Sexo:</label><br>
-				<input type="radio" name="sexo" value="fem" required="required">
-				<label for="fem" class="dif">Fêmea</label>
-				<input type="radio" name="sexo" value="macho" required="required">
-				<label for="macho" class="dif">Macho</label><br>
-				<label>É castrado?</label><br>
-				<input type="radio" name="castracao" value="sim" required="required">
-				<label for="sim" class="dif">Sim</label>
-				<input type="radio" name="castracao" value="nao" required="required" style="margin-left: 48px;">		
-				<label for="nao" class="dif">Não</label><br>
-				<label>É vacinado?</label><br>
-				<input type="radio" name="vacinacao"  value="sim2" required="required">
-				<label for="sim2" class="dif">Sim</label>
-				<input type="radio" name="vacinacao" class="dif" value="nao2" required="required" style="margin-left: 48px;">
-				<label for="nao2" class="dif">Não</label><br>
-			</div>
-			<input type="submit" value="Enviar">
-		</form>		
+		<div id="position">
+			<form>
+				<img src="../imagens/icon_upload.png" id="imagem" width="65px">
+				<input id="arquivo" type="file" accept="image/*" hidden>
+				<img id="preview-img">
+				<div id="esquerda">
+					<label for="anome" >Nome:</label><br>
+					<input type="text" name="anome" id="anome"required="required"><br>
+					<label for="aidade" >Idade:</label><br>
+					<input type="text" name="aidade" required="required"><br>
+					<label for="descricao">Descreva o animal brevemente:</label><br>
+					<textarea id="descricao" name="descricao" rows="5" cols="33" required="" maxlength="250">
+					</textarea>
+				</div>
+				<div id="direita">
+					<label>Sexo:</label><br>
+					<input type="radio" name="sexo" value="fem" required="required">
+					<label for="fem" class="dif">Fêmea</label>
+					<input type="radio" name="sexo" value="macho" required="required">
+					<label for="macho" class="dif">Macho</label><br>
+					<label>É castrado?</label><br>
+					<input type="radio" name="castracao" value="sim" required="required">
+					<label for="sim" class="dif">Sim</label>
+					<input type="radio" name="castracao" value="nao" required="required" style="margin-left: 48px;">		
+					<label for="nao" class="dif">Não</label><br>
+					<label>É vacinado?</label><br>
+					<input type="radio" name="vacinacao"  value="sim2" required="required">
+					<label for="sim2" class="dif">Sim</label>
+					<input type="radio" name="vacinacao" class="dif" value="nao2" required="required" style="margin-left: 48px;">
+					<label for="nao2" class="dif">Não</label><br>
+				</div>
+				<input type="submit" value="Enviar">
+			</form>	
+		</div>		
 	</div>
 	<!--Script para "transformar" o file em um botão-->
 	<script type="text/javascript">
