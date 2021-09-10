@@ -1,25 +1,27 @@
 from config import *
 
 class Usuario(db.Model):
-	id_usuario = db.Column(db.Integer, primary_key = True)
+	id = db.Column(db.Integer, primary_key = True)
 	nome = db.Column(db.String(254))
 	email = db.Column(db.String(254))
-	endereco = db.Column(db.String(254))
-	fone = db.Column(db.String(254))
-	pontos_acumulados = db.Column(db.Integer)
+	estado = db.Column(db.String(254))
+  cidade = db.Column(db.String(254))
+  fone = db.Column(db.String(254))
+  cpf = db.Column(db.Integer(11))
 
 	def json(self):
-        return {
-          "id" : self.id_usuario,
-          "nome" : self.nome,
-          "email" : self.email,
-          "endereco" : self.endereco,
-          "fone" : self.fone,
-          "pontos" : sefl.pontos_acumulados
-        }        
+    return {
+      "id" : self.id,
+      "nome" : self.nome,
+      "email" : self.email,
+      "estado" : self.estado,
+      "cidade" : self.cidade,
+      "fone" : self.fone,
+      "cpf" : self.cpf
+    }        
 
 class Pet(db.Model):
-	id_pet = db.Column(db.Integer, primary_key = True)
+	id = db.Column(db.Integer, primary_key = True)
 	foto = db.Column(db.LargeBinary)
 	nome = db.Column(db.String(254))
 	idade = db.Column(db.Integer)
@@ -29,13 +31,45 @@ class Pet(db.Model):
 	descricao = db.Column(db.String(254))
 
 	def json(self):
-        return {
-          "id" : self.id_pet,
-          "foto" : self.foto,
-          "nome" : self.nome,
-          "idade" : self.idade,
-          "sexo" : self.sexo,
-          "castracao" : self.castracao,
-          "vacinas" : self.vacinas,
-          "descricao" : self.descricao	
-        }        
+    return {
+      "id" : self.id,
+      "foto" : self.foto,
+      "nome" : self.nome,
+      "idade" : self.idade,
+      "sexo" : self.sexo,
+      "castracao" : self.castracao,
+      "vacinas" : self.vacinas,
+      "descricao" : self.descricao	
+    }
+
+class Publicacao(db.Model):
+  id = db.Column(db.Integer, primary_key = True)
+  data = db.Column(db.Date)
+  id_user = db.Column(db.Integer, foreign_key('usuario.id'))
+  id_pet = db.Column(db.Integer, foreign_key('pet.id'))
+
+class Adocao(db.Model):
+  id = db.Column(db.Integer, primary_key = True)
+  data = db.Column(db.Date)
+  id_user = db.Column(db.Integer, foreign_key('usuario.id'))
+  id_pet = db.Column(db.Integer, foreign_key('pet.id'))       
+
+if __name__ == "__main__":
+  # apagar o arquivo, se houver
+  if os.path.exists(arquivobd):
+      os.remove(arquivobd)
+
+  # criar tabelas
+  db.create_all()
+
+  # teste da classe Pessoa
+  p1 = Pet(nome = "Max", idade = 2, sexo = "M", castracao = "N", vacinas = "S", descricao "cachorro de porte médio")
+  p1 = Pet(nome = "Felice", idade = 4, sexo = "F", castracao = "S", vacinas = "S", descricao "gato pequeno")    
+  
+  # persistir
+  db.session.add(p1)
+  db.session.add(p2)
+  db.session.commit()
+
+  # exibir a pessoa no format json
+  print(p2.json())
