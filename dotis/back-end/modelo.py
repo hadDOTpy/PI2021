@@ -28,7 +28,7 @@ class Pet(db.Model):
 	sexo = db.Column(db.String(254))
 	castracao = db.Column(db.String(254))
 	vacinas = db.Column(db.String(254))
-	descricao = db.Column(db.String(254))
+	desc = db.Column(db.String(254))
 
 	def json(self):
 		return {
@@ -39,7 +39,7 @@ class Pet(db.Model):
 			"sexo" : self.sexo,
 			"castracao" : self.castracao,
 			"vacinas" : self.vacinas,
-			"descricao" : self.descricao	
+			"descricao" : self.desc
 		}
 
 class Publicacao(db.Model):
@@ -63,8 +63,8 @@ if __name__ == "__main__":
 	db.create_all()
 
 	# teste da classe Pessoa
-	p1 = Pet(nome = "Max", idade = 2, sexo = "M", castracao = "N", vacinas = "S", descricao "cachorro de porte médio")
-	p1 = Pet(nome = "Felice", idade = 4, sexo = "F", castracao = "S", vacinas = "S", descricao "gato pequeno")    
+	p1 = Pet(nome = "Max", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
+	p2 = Pet(nome = "Felice", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno")    
 
 	# persistir
 	db.session.add(p1)
