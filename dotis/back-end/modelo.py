@@ -5,9 +5,9 @@ class Usuario(db.Model):
 	nome = db.Column(db.String(254))
 	email = db.Column(db.String(254))
 	estado = db.Column(db.String(254))
- 	cidade = db.Column(db.String(254))
+	cidade = db.Column(db.String(254))
 	fone = db.Column(db.String(254))
-	cpf = db.Column(db.Integer(11))
+	cpf = db.Column(db.Integer)
 
 	def json(self):
 		return {
@@ -22,7 +22,7 @@ class Usuario(db.Model):
 
 class Pet(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
-	foto = db.Column(db.LargeBinary)
+	foto = db.Column(db.String(254))
 	nome = db.Column(db.String(254))
 	idade = db.Column(db.Integer)
 	sexo = db.Column(db.String(254))
@@ -45,19 +45,39 @@ class Pet(db.Model):
 class Publicacao(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
 	data = db.Column(db.Date)
-	id_user = db.Column(db.Integer, foreign_key('usuario.id'))
-	id_pet = db.Column(db.Integer, foreign_key('pet.id'))
+	id_user = db.Column(db.Integer, db.ForeignKey(Usuario.id))
+	id_pet = db.Column(db.Integer, db.ForeignKey(Pet.id))
+	usuario = db.relationship("Usuario")
+	pet = db.relationship("Pet")
+
+	def json(self):
+		return {
+			"id" : self.id,
+			"data" : self.data,
+			"id_user" : self.id_user,
+			"id_pet" : self.id_pet
+		}
 
 class Adocao(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
 	data = db.Column(db.Date)
-	id_user = db.Column(db.Integer, foreign_key('usuario.id'))
-	id_pet = db.Column(db.Integer, foreign_key('pet.id'))       
+	id_user = db.Column(db.Integer, db.ForeignKey(Usuario.id))
+	id_pet = db.Column(db.Integer, db.ForeignKey(Pet.id))
+	usuario = db.relationship("Usuario")
+	pet = db.relationship("Pet")
+
+	def json(self):
+		return {
+			"id" : self.id,
+			"data" : self.data,
+			"id_user" : self.id_user,
+			"id_pet" : self.id_pet
+		}
 
 if __name__ == "__main__":
 	# apagar o arquivo, se houver
 	if os.path.exists(arquivobd):
-	os.remove(arquivobd)
+		os.remove(arquivobd)
 
 	# criar tabelas
 	db.create_all()
@@ -73,3 +93,4 @@ if __name__ == "__main__":
 
 	# exibir a pessoa no format json
 	print(p2.json())
+
