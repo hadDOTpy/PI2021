@@ -84,13 +84,21 @@ if __name__ == "__main__":
 
 	# teste da classe Pessoa
 	p1 = Pet(nome = "Max", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
-	p2 = Pet(nome = "Felice", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno")    
+	p2 = Pet(nome = "Felice", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno") 
+	p3 = Pet(nome = "Bob", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
+	p4 = Pet(nome = "Pip", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno")
+	p5 = Pet(nome = "Neve", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
+	p6 = Pet(nome = "Dog", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno")   
 
 	# persistir
 	db.session.add(p1)
 	db.session.add(p2)
+	db.session.add(p3)
+	db.session.add(p4)
+	db.session.add(p5)
+	db.session.add(p6)
 	db.session.commit()
 
 	# exibir a pessoa no format json
-	print(p2.json())
+	print(p5.json())
 

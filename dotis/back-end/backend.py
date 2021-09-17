@@ -22,6 +22,7 @@ def listar_pets():
     for i in pets:
         retorno.append(i.json())
     r = jsonify(retorno)
+    r.headers.add("Access-Control-Allow-Origin", "*") 
     return r
 
 app.run(debug = True)
