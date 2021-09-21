@@ -101,4 +101,5 @@ if __name__ == "__main__":
 
 	# exibir a pessoa no format json
 	print(p5.json())
+	# curl -X POST -H "Content-Type:application/json" -d '{"nome": "Jack", "idade": "1", "sexo": "F", "castracao": "S", "vacinas": "S", "desc": "gato bonito"}' localhost:5000/inserir_pets
 
