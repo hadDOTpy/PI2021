@@ -39,6 +39,18 @@ def inserir_pets():
     r.headers.add("Access-Control-Allow-Origin", "*")
     return r
 
+@app.route('/uploadajax', methods = ['POST'])
+def upldfile():
+    r = jsonify({"mensagem":"tentando..."})
+    if request.method == 'POST':
+        file_val = request.files['file']
+        print("vou salvar em: "+file_val.filename)
+        arquivoimg = os.path.join(path, 'img_pet/'+file_val.filename)
+        file_val.save(arquivoimg)
+        r = jsonify({"mensagem":"ok"})
+    r.headers.add("Access-Control-Allow-Origin", "*")
+    return r
+
 # @app.route("/index")
 # def index():
 #     return render_template('index.html', titulo='Dotis')
