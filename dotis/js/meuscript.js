@@ -28,5 +28,48 @@ $(function() { // quando o documento estiver pronto/carregado
             $('#grid_pet').append(lin);
         }
     }
+    // código para mapear click do botão incluir pessoa
+    $(document).on("click", "#btnSubmit", function() {
+        //pegar dados da tela
+        nome = $("#campoNome").val();
+        idade = $("#campoIdade").val();
+        // sexo = $("#campoSexo").val();
+        // castracao = $("#campoCast").val();
+        // vacinas = $("#campoVacinas").val();
+        desc = $("#campoDesc").val();
+        // preparar dados no formato json
+        // var dados = JSON.stringify({ nome: nome, idade: idade, sexo: sexo, castracao : castracao, vacinas: vacinas, desc: desc });
+        var dados = JSON.stringify({ nome: nome, idade: idade, desc: desc });
+        // fazer requisição para o back-end
+        $.ajax({
+            url: 'http://localhost:5000/inserir_pets',
+            type: 'POST',
+            dataType: 'json', // os dados são recebidos no formato json
+            contentType: 'application/json', // tipo dos dados enviados
+            data: dados, // estes são os dados enviados
+            success: petInserido, // chama a função listar para processar o resultado
+            error: erroAoInserir
+        });
+        function petInserido (retorno) {
+            if (retorno.resultado == "ok") { // a operação deu certo?
+                // informar resultado de sucesso
+                alert("Pet incluído com sucesso!");
+                // limpar os campos
+                $("#campoNome").val("");
+                $("#campoIdade").val("");
+                // $("#campoSexo").val("");
+                // $("#campoCast").val("");
+                // $("#campoVacinas").val("");
+                $("#campoDesc").val("");
+            } else {
+                // informar mensagem de erro
+                alert(retorno.resultado + ":" + retorno.detalhes);
+            }            
+        }
+        function erroAoInserir (retorno) {
+            // informar mensagem de erro
+            alert("ERRO: "+retorno.resultado + ":" + retorno.detalhes);
+        }
+    });
 
 });
