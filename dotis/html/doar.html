@@ -64,10 +64,13 @@
 			flex: 1;
 		}
         #esq {
-        	margin-left: 10%;
+        	margin-left: 32%;
         	margin-bottom: 25px
 
-        }		
+        }
+        #dir {
+        	margin-right: 27%;
+        }
 		input[type=text] {
 			margin-top: 6px;
 			margin-bottom: 11px;
@@ -136,14 +139,14 @@
 		</div>
 		<p id="legenda">Para cadastrar um animal no site, é necessário preencher todas as informações abaixo e ter o seu perfil pessoal completo.</p>
 		<div id="pos"> <!-- position -->
-			<form onsubmit= "return false;" id = "MyForm">
+			<form onsubmit= "return false;" id = "MyForm" enctype="multipart/form-data">
 				<div class="linha">
 
                 <div class="coluna" id="esq">
 
-				  <img src="../imagens/icon_upload.png" id="imagem" width="65px">
-				  <input id="arquivo" type="file" accept="image/*" hidden>
-				  <img id="preview-img"><br><br>
+				    <img src="../imagens/icon_upload.png" id="imagem" width="65px">
+				    <input id="arquivo" type="file" accept="image/*" hidden>
+				    <img id="preview-img"><br><br>
 				   
 			
 					<label>Sexo:</label><br>
@@ -174,8 +177,7 @@
 					<label for="campoIdade" >Idade:</label><br>
 					<input type="text" id="campoIdade" required="required"><br>
 					<label for="campoDesc">Descreva o animal brevemente:</label><br>
-					<textarea id="descricao" id="campoDesc" rows="5" cols="33" required="" maxlength="250">
-					</textarea><br><br>
+					<textarea id="campoDesc" rows="5" cols="33" required="" maxlength="250"></textarea><br><br>
 					<button id="btnSubmit">Enviar</button>
 				</div>
 
@@ -186,7 +188,7 @@
 	</div>
 	
 	<!--Script para "transformar" o file em um botão-->
-	<script type="text/javascript">
+	<<!-- script type="text/javascript">
 		const $ = document.querySelector.bind(document);
 		const previewImg = $('#preview-img');
 		const fileChooser = $('#arquivo');
@@ -200,7 +202,7 @@
     		reader.onload = e => previewImg.src = e.target.result;
     		reader.readAsDataURL(fileToUpload);
 			};
-	</script>
+	</script> -->
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 	<script src="../js/meuscript.js"></script>
 </body>
