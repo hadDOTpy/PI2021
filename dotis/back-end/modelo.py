@@ -83,12 +83,12 @@ if __name__ == "__main__":
 	db.create_all()
 
 	# teste da classe Pessoa
-	p1 = Pet(nome = "Max", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
-	p2 = Pet(nome = "Felice", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno") 
-	p3 = Pet(nome = "Bob", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
-	p4 = Pet(nome = "Pip", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno")
-	p5 = Pet(nome = "Neve", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
-	p6 = Pet(nome = "Dog", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno")   
+	p1 = Pet(nome = "Max", foto = "gato.png", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
+	p2 = Pet(nome = "Felice", foto = "gato1.jpg", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno") 
+	p3 = Pet(nome = "Bob", foto = "gato2.jpg", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
+	p4 = Pet(nome = "Pip", foto = "gato3.jpg", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno")
+	p5 = Pet(nome = "Neve", foto = "gato4.jpg", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
+	p6 = Pet(nome = "Dog", foto = "gato5.jpeg", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno")   
 
 	# persistir
 	db.session.add(p1)
