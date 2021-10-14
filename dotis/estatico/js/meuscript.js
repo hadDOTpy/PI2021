@@ -18,7 +18,7 @@ $( document ).ready(function() { // quando o documento estiver pronto/carregado
             lin =
                 '<div class="polaroid">' +
                 '   <div class="pic_block">' +
-                '        <img src="../imagens/cat.jpg" class="pet_pic" style= width="200" height="200">' +
+                '        <img src="../back-end/img_pet/' + pets[i].foto + ' " class="pet_pic" style= width="200" height="200">' +
                 '    </div>' +
                 '    <div class="container">' +
                 '   <p>' + pets[i].nome + '</p>' +
