@@ -1,4 +1,4 @@
-$( document ).ready(function() { // quando o documento estiver pronto/carregado
+    $( document ).ready(function() { // quando o documento estiver pronto/carregado
 
  
     $.ajax({
