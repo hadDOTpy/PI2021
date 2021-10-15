@@ -58,9 +58,9 @@
 
 		#imagem {
 			position: absolute;
-			margin-top: 68px;
-			margin-left: 43px;
-			cursor: pointer;
+			margin-top: 0px;
+			/* margin-left: 80px; */
+			/* cursor: pointer; */
 		}
 
 		.linha {
@@ -122,6 +122,20 @@
 			font-family: 'Libre Franklin', sans-serif;
 
 		}
+
+		input[type=file] {
+			margin-top: 20px;
+			margin-bottom: 40px;
+			opacity: 0;
+			cursor: pointer;
+		}
+		#txtfoto {
+			margin-top: -55px;
+			position: absolute;
+			font-family: 'Libre Franklin', sans-serif;
+			font-size: 15px;
+			margin-left: 70px;
+		}
 	</style>
 </head>
 
@@ -167,13 +181,13 @@
 					<div class="coluna" id="esq">
 
 
-						<!-- <img src="imagens/icon_upload.png" id="imagem" width="65px"> -->
+						<img src="imagens/icon_upload.png" id="imagem" width="65px">
 						<!-- <input id="arquivo" type="file" accept="image/*" hidden> -->
 
 
 						<input id="arquivo" name="file" type="file">
 						<!-- <img id="preview-img"><br><br> -->
-
+						<p id="txtfoto">Selecione uma foto do pet</p>
 
 						<label>Sexo:</label><br>
 
