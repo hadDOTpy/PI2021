@@ -39,6 +39,19 @@ def inserir_pets():
     r.headers.add("Access-Control-Allow-Origin", "*")
     return r
 
+@app.route("/inserir_user", methods=['POST'])
+def inserir_user():
+    r = jsonify({"resultado": "ok", "detalhes": "ok"})
+    dados = request.get_json()
+    try:
+        novo = Usuario(**dados)
+        db.session.add(novo)
+        db.session.commit()
+    except Exception as e:
+        r = jsonify({"resultado": "erro", "detalhes": str(e)})
+    r.headers.add("Access-Control-Allow-Origin", "*")
+    return r
+
 @app.route('/uploadajax', methods = ['POST'])
 def upldfile():
     r = jsonify({"mensagem":"tentando..."})

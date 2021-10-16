@@ -7,7 +7,6 @@ class Usuario(db.Model):
 	estado = db.Column(db.String(254))
 	cidade = db.Column(db.String(254))
 	fone = db.Column(db.String(254))
-	cpf = db.Column(db.Integer)
 
 	def json(self):
 		return {
@@ -17,7 +16,6 @@ class Usuario(db.Model):
 			"estado" : self.estado,
 			"cidade" : self.cidade,
 			"fone" : self.fone,
-			"cpf" : self.cpf
 		}        
 
 class Pet(db.Model):
@@ -82,13 +80,17 @@ if __name__ == "__main__":
 	# criar tabelas
 	db.create_all()
 
-	# teste da classe Pessoa
+	# teste da classe Pet
 	p1 = Pet(nome = "Max", foto = "gato.png", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
 	p2 = Pet(nome = "Felice", foto = "gato1.jpg", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno") 
 	p3 = Pet(nome = "Bob", foto = "gato2.jpg", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
 	p4 = Pet(nome = "Pip", foto = "gato3.jpg", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno")
 	p5 = Pet(nome = "Neve", foto = "gato4.jpg", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
-	p6 = Pet(nome = "Dog", foto = "gato5.jpeg", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno")   
+	p6 = Pet(nome = "Dog", foto = "gato5.jpeg", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno")
+
+	u1 = Usuario(nome = "João", email = "joão@gmail.com", estado = "SC", cidade = "Blumenau", fone = "(47)99999-9999")
+	u2 = Usuario(nome = "Gabriela", email = "gabi@gmail.com", estado = "SP", cidade = "Tremembé", fone = "(47)99999-0000")
+	u3 = Usuario(nome = "Marta", email = "marta@gmail.com", estado = "SC", cidade = "Timbó", fone = "(47)90000-9999")
 
 	# persistir
 	db.session.add(p1)
@@ -97,9 +99,13 @@ if __name__ == "__main__":
 	db.session.add(p4)
 	db.session.add(p5)
 	db.session.add(p6)
+	db.session.add(u1)
+	db.session.add(u2)
+	db.session.add(u3)
 	db.session.commit()
 
 	# exibir a pessoa no format json
 	print(p5.json())
-	# curl -X POST -H "Content-Type:application/json" -d '{"nome": "Jack", "idade": "1", "sexo": "F", "castracao": "S", "vacinas": "S", "desc": "gato bonito"}' localhost:5000/inserir_pets
+	print(u3.json())
+
 
