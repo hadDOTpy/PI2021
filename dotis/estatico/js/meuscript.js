@@ -1,4 +1,4 @@
-    $( document ).ready(function() { // quando o documento estiver pronto/carregado
+$(document ).ready(function() { // quando o documento estiver pronto/carregado
 
  
     $.ajax({
@@ -31,7 +31,7 @@
     }
  
 
-    // código para mapear click do botão incluir pessoa
+    // código para mapear click do botão incluir pet
     $(document).on("click", "#btnSubmit", function () {
 
         var form_data = new FormData($('#MyForm')[0]);
@@ -89,6 +89,49 @@
                 $("#campoCast").val("");
                 $("#campoVacinas").val("");
                 $("#campoDesc").val("");
+            } else {
+                // informar mensagem de erro
+                alert(retorno.resultado + ":" + retorno.detalhes);
+            }
+        }
+        function erroAoInserir(retorno) {
+            // informar mensagem de erro
+            alert("ERRO: " + retorno.resultado + ":" + retorno.detalhes);
+        }
+    });
+
+    // código para mapear click do botão incluir usuário
+    $(document).on("click", "#btnSubmit", function () {
+
+        nome = $("#campoNome").val();
+        email = $("#campoEmail").val();
+        estado = $("#campoUF").val();
+        cidade = $("#campoCdd").val();
+        fone = $("#campoTel").val();
+
+        var dados = JSON.stringify({ nome: nome, email: email, estado: estado, cidade: cidade, fone: fone });
+
+        // fazer requisição para o back-end
+        $.ajax({
+            url: 'http://localhost:5000/inserir_user',
+            type: 'POST',
+            dataType: 'json', // os dados são recebidos no formato json
+            contentType: 'application/json', // tipo dos dados enviados
+            data: dados, // estes são os dados enviados
+            success: userInserido, // chama a função listar para processar o resultado
+            error: erroAoInserir
+        });
+
+        function userInserido(retorno) {
+            if (retorno.resultado == "ok") { // a operação deu certo?
+                // informar resultado de sucesso
+                alert("Usuário incluído com sucesso!");
+                // limpar os campos
+                $("#campoNome").val("");
+                $("#campoEmail").val("");
+                $("#campoUF").val("");
+                $("#campoCdd").val("");
+                $("#campoTel").val("");
             } else {
                 // informar mensagem de erro
                 alert(retorno.resultado + ":" + retorno.detalhes);
