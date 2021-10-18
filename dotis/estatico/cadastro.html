@@ -41,7 +41,7 @@
 			margin-bottom: 25px;
 		}
 		label{
-			font-family: 'Libre Franklin', sans-serif
+			font-family: 'Libre Franklin', sans-serif;
 		}
 		input[type=text], input[type=email] {
 			margin-top: 6px;
@@ -58,6 +58,35 @@
 			font-family: 'Libre Franklin', sans-serif;
 			margin-top: 20px;
 		}
+		/*select*/
+		.select-estiloso { /* <div> */
+	       width: 240px;
+	       height: 34px;
+	       overflow: hidden;
+	       background: url(imagens/nova_setinha.png) no-repeat right #ddd; /* novo ícone para o <select> */
+	       border: 1px solid  #acacac;
+	       background-size: 25px;
+	       margin-bottom: 11px;
+	       margin-top: 6px;
+	       background-position: 210px;
+	       background-color: #d3d3d3;
+	    }   
+
+	    .select-estiloso select { /* <select> */
+	       background: transparent; /* importante para exibir o novo ícone */
+	       width: 240px;
+	       padding: 5px;
+	       font-size: 16px;
+	       line-height: 1;
+	       border: 0;
+	       border-radius: 0;
+	       height: 34px;
+	       -webkit-appearance: none;
+	       font-family: 'Libre Franklin', sans-serif;
+	    }
+	    option {
+	    	background-color: white;
+	    }      
 	</style>
 </head>
 <body>
@@ -91,7 +120,7 @@
 		<div class="titulo">
 			<h1 class="titulo">Cadastro</h1>
 		</div>
-		<p id="legenda">Cadastre-se no site para poder ter acesso às páginas!</p>
+		<p id="legenda">Cadastre-se no site para começar sua jornada!</p>
 		<form onsubmit= "return false;" id = "MyForm">
 			<div class="position">
 				<label for="campoNome">Nome:</label><br>
@@ -103,14 +132,22 @@
 				<label for="campoEmail">Email:</label><br>
 				<input type="email" id="campoEmail" required="required"><br>
 
+				
 				<label for="campoUF">Estado:</label>
-				<select>
-					<option value="Teste">Teste.</option>
-				</select><br>
-				<label for="campoCdd">Cidade:</label>
-				<select>
-					<option value="Teste">Teste.</option>
-				</select><br>
+				<div class="select-estiloso">
+					<select>
+						<option value="--">Selecione uma opção</option>
+						<option value="SC">Santa Catarina</option>
+						<option value="PR">Paraná</option>
+						<option value="RS">Rio Grande do Sul</option>
+					</select><br>
+				</div>
+					<label for="campoCdd">Cidade:</label>
+				<div class="select-estiloso">
+					<select>
+						<option value="Teste">Teste.</option>
+					</select><br>
+				</div>
 				<button id="btnSubmit">Enviar</button>
 			</div>
 		</form>
