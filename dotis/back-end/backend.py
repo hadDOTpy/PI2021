@@ -1,7 +1,7 @@
 from config import *
 from modelo import Usuario
 from modelo import Pet
-from flask import render_template
+from flask import render_template, send_file
 
 @app.route("/")
 def padrao():
@@ -63,6 +63,18 @@ def upldfile():
         r = jsonify({"mensagem":"ok"})
     r.headers.add("Access-Control-Allow-Origin", "*")
     return r
+
+@app.route('/get_image/<int:pet_id>')
+def get_image(pet_id):
+    pet = db.session.query(Pet).get(pet_id)
+    # if request.args.get('type') == '1':
+    #    filename = 'ok.gif'
+    # else:
+    #    filename = 'error.gif'
+    # arquivoimg = os.path.join(path, 'img_pet/'+ pet.foto)
+    arquivoimg = os.path.join('/home/ingguk/mysite/img_pet', pet.foto)
+    # /home/ingguk/mysite/img_pet
+    return send_file(arquivoimg, mimetype='image/gif')
 
 # @app.route("/index")
 # def index():
