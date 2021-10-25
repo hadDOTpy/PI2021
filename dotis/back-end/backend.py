@@ -71,8 +71,8 @@ def get_image(pet_id):
     #    filename = 'ok.gif'
     # else:
     #    filename = 'error.gif'
-    # arquivoimg = os.path.join(path, 'img_pet/'+ pet.foto)
-    arquivoimg = os.path.join('/home/ingguk/mysite/img_pet', pet.foto)
+    arquivoimg = os.path.join(path, 'img_pet/'+ pet.foto)
+    # arquivoimg = os.path.join('/home/ingguk/mysite/img_pet', pet.foto)
     # /home/ingguk/mysite/img_pet
     return send_file(arquivoimg, mimetype='image/gif')
 
