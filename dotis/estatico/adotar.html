@@ -85,17 +85,29 @@
 		    -moz-transition: opacity 400ms ease-in;
 		    transition: opacity 400ms ease-in;
 		    pointer-events: none;
-		}
-		.modal:target {
-  			opacity: 1;
-  			pointer-events: auto;
-		}
-		.modal {
 		    width: 400px;
 		    position: relative;
 		    margin: 10% auto;
 		    padding: 15px 20px;
 		    background: #fff;
+		    border-radius: 5px;
+		}
+		.modal:target {
+  			opacity: 1;
+  			pointer-events: auto;
+		}
+		.fechar {
+		    position: absolute;
+		    width: 30px;
+		    right: -15px;
+		    top: -20px;
+		    text-align: center;
+		    line-height: 30px;
+		    margin-top: 5px;
+		    background: #b3cfaf;
+		    border-radius: 50%;
+		    font-size: 16px;
+		    color: #fff;
 		}
 
 	</style>
