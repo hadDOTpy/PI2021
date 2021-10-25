@@ -20,7 +20,7 @@ $(function () { // quando o documento estiver pronto/carregado
                 '        <img src="http://localhost:5000/get_image/' + pets[i].id + '" class="pet_pic" style= width="200" height="200">' +
                 '    </div>' +
                 '    <div class="container">' +
-                '   <p>' + pets[i].nome + '</p>' +
+                '   <a href="#abrirModal"><p>' + pets[i].nome + '</p></a>' +
                 '   </div>' +
                 '</div>';
 
