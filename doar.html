@@ -77,12 +77,12 @@
 		}
 
 		#esq {
-			margin-left: 29%;
+			margin-left: 30%;
 			margin-bottom: 25px;
 		}
 
 		#dir {
-			margin-right: 25%;
+			margin-right: 27%;
 			margin-bottom: 25px;
 		}
 
@@ -118,9 +118,9 @@
 			position: relative;
 			width: 70px;
 			height: 35px;
-			left: 97px;
+			left: 135px;
 			font-family: 'Libre Franklin', sans-serif;
-
+			top: 10px;
 		}
 
 		input[type=file] {
@@ -134,8 +134,11 @@
 			margin-top: -55px;
 			position: absolute;
 			font-family: 'Libre Franklin', sans-serif;
-			font-size: 15px;
+			font-size: 17px;
 			margin-left: 70px;
+		}
+		#mover { 
+			margin-left: 35px;
 		}
 	</style>
 </head>
@@ -161,7 +164,7 @@
 			<div class="dropdown">
 				<img src="imagens/icon_profile.png" class="img_profile" alt="pessoa">
 				<div class="conteudodropdown">
-					<a href="#">Login</a>
+					<a href="login.html">Login</a>
 					<a href="cadastro.html">Cadastro</a>
 				</div>
 			</div>
@@ -173,7 +176,7 @@
 			<h1 id="titulo">Doe um Animal</h1>
 		</div>
 		<p id="legenda">Para cadastrar um animal no site, é necessário preencher todas as informações abaixo e ter o seu
-			perfil pessoal completo.</p><br>
+			perfil pessoal completo.</p>
 		<div id="pos">
 			<!-- position -->
 			<form onsubmit="return false;" id="MyForm" enctype="multipart/form-data">
@@ -181,7 +184,15 @@
 
 					<div class="coluna" id="esq">
 
+						<label for="campoNome">Nome:</label><br>
+						<input type="text" id="campoNome" required="required"><br>
+						<label for="campoIdade">Idade:</label><br>
+						<input type="text" id="campoIdade" required="required"><br>
+						<label for="campoDesc">Descreva o animal brevemente:</label><br>
+						<textarea id="campoDesc" rows="5" cols="33" required="" maxlength="250"></textarea><br><br>
+					</div>
 
+					<div class="coluna" id="dir">
 						<img src="imagens/icon_upload.png" id="imagem" width="65px">
 						<!-- <input id="arquivo" type="file" accept="image/*" hidden> -->
 
@@ -190,37 +201,29 @@
 						<!-- <img id="preview-img"><br><br> -->
 						<p id="txtfoto">Selecione uma foto do pet</p><br>
 
+						<div id="mover">
+							<label>Sexo:</label><br>
 
-						<label>Sexo:</label><br>
+							<label for="campoSexo" class="dif">
+								<input type="radio" name="sexo" value="F" id="campoSexo" required="required">Fêmea
+							</label>
 
-						<label for="campoSexo" class="dif">
-							<input type="radio" name="sexo" value="F" id="campoSexo" required="required">Fêmea
-						</label>
+							<input type="radio" name="sexo" value="M" id="campoSexo" required="required">
+							<label for="campoSexo" class="dif">Macho</label><br>
 
-						<input type="radio" name="sexo" value="M" id="campoSexo" required="required">
-						<label for="campoSexo" class="dif">Macho</label><br>
+							<label>É castrado?</label><br>
+							<input type="radio" name="castracao" value="S" id="campoCast" required="required">
+							<label for="campoCast" class="dif">Sim</label>
+							<input type="radio" name="castracao" value="N" id="campoCast" required="required">
+							<label for="campoCast" class="dif">Não</label><br>
 
-						<label>É castrado?</label><br>
-						<input type="radio" name="castracao" value="S" id="campoCast" required="required">
-						<label for="campoCast" class="dif">Sim</label>
-						<input type="radio" name="castracao" value="N" id="campoCast" required="required">
-						<label for="campoCast" class="dif">Não</label><br>
-
-						<label>É vacinado?</label><br>
-						<input type="radio" name="vacinas" value="S" id="campoVacinas" required="required">
-						<label for="campoVacinas" class="dif">Sim</label>
-						<input type="radio" name="vacinas" class="dif" id="campoVacinas" value="N" required="required">
-						<!-- style="margin-left: 48px;"> -->
-						<label for="campoVacinas" class="dif">Não</label><br>
-
-					</div>
-					<div class="coluna" id="dir">
-						<label for="campoNome">Nome:</label><br>
-						<input type="text" id="campoNome" required="required"><br>
-						<label for="campoIdade">Idade:</label><br>
-						<input type="text" id="campoIdade" required="required"><br>
-						<label for="campoDesc">Descreva o animal brevemente:</label><br>
-						<textarea id="campoDesc" rows="5" cols="33" required="" maxlength="250"></textarea><br><br>
+							<label>É vacinado?</label><br>
+							<input type="radio" name="vacinas" value="S" id="campoVacinas" required="required">
+							<label for="campoVacinas" class="dif">Sim</label>
+							<input type="radio" name="vacinas" class="dif" id="campoVacinas" value="N" required="required">
+							<!-- style="margin-left: 48px;"> -->
+							<label for="campoVacinas" class="dif">Não</label><br>							
+						</div>
 						<button id="btnSubmit">Enviar</button>
 					</div>
 

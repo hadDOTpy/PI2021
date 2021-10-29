@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Dotis</title>
+	<meta charset="utf-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+	<link href="estilos/estilo.css" rel="stylesheet">
+	<style type="text/css">
+		#branco {
+			position: absolute;
+			width: 70%;
+			background-color: white;
+			top: 17%;
+			left: 14%;
+			border-radius: 5px;
+			box-shadow: 0 0 1em rgba(0,0,0,0.3);
+		}
+		.titulo {
+			margin-top: 20px;
+			margin-left: 2%;
+			background-color: #b3cfaf;
+			margin-right: 2%;
+			font-family: 'Libre Franklin', sans-serif;
+			font-size: 30px;
+			padding-top: 0.2px;
+			padding-bottom: 0.2px;
+		}
+		#legenda {
+			margin-left: 2%;
+			margin-right: 2%;
+			font-family: 'Libre Franklin', sans-serif;
+			font-size: 20px;
+		}
+		.position {
+			margin-left: 21%;
+			width: 100%;
+			margin-top: 25px;
+			margin-bottom: 25px;
+		}
+		label{
+			font-family: 'Libre Franklin', sans-serif;
+		}
+		input[type=email], input[type=password] {
+			margin-top: 6px;
+			margin-bottom: 11px;
+			height: 25px;
+			font-family: 'Libre Franklin', sans-serif;
+			width: 60%;
+		}
+		#btnSubmit {
+			position: relative;
+			width: 70px;
+			height: 35px;
+			left: 48%;
+			font-family: 'Libre Franklin', sans-serif;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<nav>
+		<div class="menu">
+         <img src="imagens/logo_pequena.png" class="logo" alt="logo de gato" width="50" height="50">
+			<h1><a href="index.html" class="title">Dotis</a></h1>
+			<div class="item">
+				<ul class="listaul">
+					<li class="listali">
+						<a href="adotar.html">ADOTAR</a>
+					</li>
+					<li class="listali">
+						<a href="doar.html">DOAR</a>
+					</li>
+					<li class="listali">
+						<a href="#">AJUDAR</a>
+					</li>
+				</ul>
+			</div>
+			<div class="dropdown">
+				<img src="imagens/icon_profile.png" class="img_profile" alt="pessoa">
+				<div class="conteudodropdown">
+					<a href="login.html">Login</a>
+    				<a href="cadastro.html">Cadastro</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<div id="branco">
+		<div class="titulo">
+			<h1 class="titulo">Login</h1>
+		</div>
+		<p id="legenda">Acesse sua conta para ter acesso ao seu perfil.</p>
+		<form>
+			<div class="position">
+				<label for="campoEmail">Email:</label><br>
+				<input type="email" id="campoEmail" required="required"><br>
+
+				<label for="campoEmail">Senha:</label><br>
+				<input type="password" id="campoSenha" required="required"><br>
+			</div>
+			<button id="btnSubmit">Enviar</button>
+		</form>
