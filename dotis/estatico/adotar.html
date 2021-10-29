@@ -77,20 +77,18 @@
 		    right: 0;
 		    bottom: 0;
 		    left: 0;
-		    font-family: Arial, Helvetica, sans-serif;
-		    background: rgba(0,0,0,0.8);
 		    z-index: 99999;
 		    opacity:0;
 		    -webkit-transition: opacity 400ms ease-in;
 		    -moz-transition: opacity 400ms ease-in;
 		    transition: opacity 400ms ease-in;
 		    pointer-events: none;
-		    width: 400px;
+		    width: 100%
 		    position: relative;
-		    margin: 10% auto;
-		    padding: 15px 20px;
-		    background: #fff;
-		    border-radius: 5px;
+		    /*margin: 10% auto;*/
+		    background-color: rgba(0,0,0,0.55);
+		    /*opacity: 0.5;*/
+		    /*border-radius: 5px;*/
 		}
 		.modal:target {
   			opacity: 1;
@@ -108,6 +106,31 @@
 		    border-radius: 50%;
 		    font-size: 16px;
 		    color: #fff;
+		}
+		#janela {
+			position: fixed;
+			font-family: Arial, Helvetica, sans-serif;
+			background-color: white;
+			border-radius: 5px;
+			padding: 15px 20px;
+			width: 700px;
+			height: 400px;
+			margin-top: 14%;
+			margin-left: 30.7%;
+			/*margin-right: auto;*/
+			/*overflow: hidden;*/
+		}
+		#esq {
+			width: 30%;
+			min-width: 250px;
+			display: inline-block;
+			vertical-align: top;
+		}
+		#dir {
+			width: 50%;
+			min-width: 250px;
+			display: inline-block;
+			vertical-align: top;
 		}
 
 	</style>
@@ -157,8 +180,21 @@
 		
 	</div>
 	<div id="abrirModal" class="modal">
-		<a href="#fechar" title="Fechar" class="fechar">x</a>
-		<p>Testandoooo</p>
+		<div id="janela">
+			<a href="#fechar" title="Fechar" class="fechar">x</a>
+			<div id="esq">
+				<img src="imagens/cat.jpg" style= width="200" height="200">
+				<p style="font-size: 20px;">Nome</p>
+			</div>
+			<div id="dir">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
