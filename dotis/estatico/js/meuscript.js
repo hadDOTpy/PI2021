@@ -17,7 +17,7 @@ $(function () { // quando o documento estiver pronto/carregado
             lin =
                 '<div class="polaroid">' +
                 '   <div class="pic_block">' +
-                '        <img src="http://localhost:5000/get_image/' + pets[i].id + '" class="pet_pic" style= width="200" height="200">' +
+                '        <a href="#abrirModal"><img src="http://localhost:5000/get_image/' + pets[i].id + '" class="pet_pic" style= width="200" height="200"></a>' +
                 '    </div>' +
                 '    <div class="container">' +
                 '   <a href="#abrirModal"><p>' + pets[i].nome + '</p></a>' +
