@@ -17,10 +17,10 @@ $(function () { // quando o documento estiver pronto/carregado
             lin =
                 '<div class="polaroid">' +
                 '   <div class="pic_block">' +
-                '        <a href="#abrirModal"><img src="http://localhost:5000/get_image/' + pets[i].id + '" class="pet_pic" style= width="200" height="200"></a>' +
-                '    </div>' +
-                '    <div class="container">' +
-                '   <a href="#abrirModal"><p>' + pets[i].nome + '</p></a>' +
+                '       <a href="#abrirModal"><img src="http://localhost:5000/get_image/' + pets[i].id + '" class="pet_pic" style= width="200" height="200"></a>' +
+                '   </div>' +
+                '   <div class="container">' +
+                '   <a href="#abrirModal" id="teste"><p>' + pets[i].nome + '</p></a>' +
                 '   </div>' +
                 '</div>';
 
@@ -73,5 +73,42 @@ $(function () { // quando o documento estiver pronto/carregado
             alert("ERRO: " + retorno.resultado + ":" + retorno.detalhes);
         }
     });
+    // $.ajax({
+    //     url: 'http://localhost:5000/listar_pets',
+    //     method: 'GET',
+    //     dataType: 'json', // os dados são recebidos no formato json
+    //     success: modal, // chama a função listar para processar o resultado
+    //     error: function () {
+    //         alert("erro ao ler dados, verifique o backend");
+    // }
+    // });
+    //     function modal(pets) {
+    //         for (var i in pets) {
 
+    //             lin =
+    //                 '<div id="janela">' +
+    //                 '   <a href="#fechar" title="Fechar" class="fechar">x</a>' +
+    //                 '   <div id="esq">' +
+    //                 '       <img src="imagens/cat.jpg" style= width="200" height="200">' +
+    //                 '       <div>' +
+    //                 '           <p style="font-size: 20px; text-align: center; margin-top: 10px;">' + pets[i].nome + '</p>' +
+    //                 '       </div>' +
+    //                 '       <div id="infocl">' +
+    //                 '           <p>Doador: xxxx</p>' +
+    //                 '           <p>Telefone: xxxxxxxx</p>' +
+    //                 '           <p>E-mail: xxxxx</p>' +
+    //                 '           </div>' +
+    //                 '   </div>' +
+    //                 '   <div id="dir">' +
+    //                 '       <p>Sou castrado?</p>' +
+    //                 '       <p>Sou vacinado?</p>' +
+    //                 '       <p>Sou do sexo </p>' +
+    //                 '       <p>Tenho x aninho(s)</p>' +
+    //                 '       <p>Sobre mim:</p>' +
+    //                 '       </div>' +
+    //                 '</div>' +
+
+    //             $('#abrirModal').append(lin);
+    //         }
+    // }
 });
