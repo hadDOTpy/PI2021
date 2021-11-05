@@ -46,7 +46,7 @@
 		input[type=text], input[type=email], input[type=password] {
 			margin-top: 6px;
 			margin-bottom: 11px;
-			height: 25px;
+			height: 30px;
 			font-family: 'Libre Franklin', sans-serif;
 			width: 60%;
 		}
@@ -90,7 +90,10 @@
 	    #posicao {
 			margin-left: 25%;
 			position: flex
-	    }    
+	    } 
+	    .bloco {
+	    	display: inline-flex;
+	    }   
 	</style>
 </head>
 <body>
@@ -106,20 +109,16 @@
 					<li class="listali">
 						<a href="doar.html">DOAR</a>
 					</li>
-					<li class="listali">
-						<a href="#">AJUDAR</a>
-					</li>
 				</ul>
 			</div>
 			<div class="dropdown">
 				<img src="imagens/icon_profile.png" class="img_profile" alt="pessoa">
 				<div class="conteudodropdown">
-					<a href="#">Login</a>
+					<a href="login.html">Login</a>
     				<a href="cadastro.html">Cadastro</a>
 				</div>
 			</div>
 		</div>
-	</nav>
 	<div id="branco">
 		<div class="titulo">
 			<h1 class="titulo">Cadastro</h1>
@@ -142,22 +141,23 @@
 				<label for="campoTel">Telefone:</label><br>
 				<input type="text" id="campoTel" required="required" placeholder="(99)99999-9999"><br>
 
-				
-				<label for="campoUF">Estado:</label>
-				<div class="select-estiloso">
-					<select>
-						<option value="--">Selecione uma opção</option>
-						<option value="SC">Santa Catarina</option>
-						<option value="PR">Paraná</option>
-						<option value="RS">Rio Grande do Sul</option>
-					</select><br>
-				</div>
-				<div id="posicao">
-					<label for="campoCdd">Cidade:</label>
+				<div class="bloco">
+					<label for="campoUF">Estado:</label>
 					<div class="select-estiloso">
 						<select>
-							<option value="Teste">Teste.</option>
+							<option value="--">Selecione uma opção</option>
+							<option value="SC">Santa Catarina</option>
+							<option value="PR">Paraná</option>
+							<option value="RS">Rio Grande do Sul</option>
 						</select><br>
+					</div>
+					<div id="posicao">
+						<label for="campoCdd">Cidade:</label>
+						<div class="select-estiloso">
+							<select>
+								<option value="Teste">Teste.</option>
+							</select><br>
+						</div>
 					</div>
 				</div>
 				<button id="btnSubmit">Enviar</button>
