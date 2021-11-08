@@ -13,6 +13,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 	<link href="estilos/estilo.css" rel="stylesheet">
 	<style type="text/css">
+
+		/* Padrão em todas as páginas */
 		#branco {
 			position: absolute;
 			width: 80%;
@@ -40,17 +42,14 @@
 			font-family: 'Libre Franklin', sans-serif;
 			font-size: 20px;
 		}
+		/* Fim do padrão */ 
 
-		#position {
+		/* Padrão formulário */
+		#posicao {
 			margin-left: 21%;
 			width: 100%;
 			margin-top: 25px;
 			margin-bottom: 25px;
-		}
-
-		#imagem {
-			position: absolute;
-			margin-top: 0px;
 		}
 
 		input[type=text] {
@@ -65,7 +64,7 @@
 		textarea {
 			margin-top: 6px;
 			width: 98.5%;
-			height: 130px;
+			height: 100px;
 			font-family: 'Libre Franklin', sans-serif;
 			font-size: 15px;
 			outline: none;
@@ -82,43 +81,46 @@
 			margin-bottom: 20px;
 		}
 
-		#btnSubmit {
-			
-			width: 100%;
+		#btnSubmit {	
+			width: 30.5%;
 			height: 35px;
 			font-family: 'Libre Franklin', sans-serif;
-			top: 140px;
+			margin-top: 6px;
+			margin-left: 35%;
 		}
 
 		input[type=file] {
 			margin-top: 20px;
-			margin-bottom: 40px;
+			margin-bottom: 11px;
 			opacity: 0;
-		}
-
-		#txtfoto {
-			margin-top: px;
-			position: fixed;
-			font-family: 'Libre Franklin', sans-serif;
-			font-size: 17px;
-			margin-left: 70px;
-		}
-
-		.linha {
-			width: 100%;
-			display: inline-block;
-			align-content: stretch;
+			width: 50px;
+			height: 50px;
+			cursor: pointer;
 		}
 
 		form { 
 		width: 60%; 
 		}
 
+		#txtfoto {
+			position: relative;
+			font-family: 'Libre Franklin', sans-serif;
+			font-size: 17px;
+			margin-left:15px
+		}
+
+		#imagem {
+			position: absolute;
+			margin-top: 0px;
+		}
+
+		
+
 	</style>
 </head>
 
 <body>
-	<nav>
+	<nav> <!-- Padrão em todos -->
 
 		<div class="menu">
 
@@ -142,6 +144,7 @@
 			<div class="dropdown">
 
 				<img src="imagens/icon_profile.png" class="img_profile" alt="pessoa">
+
 				<div class="conteudodropdown">
 					<a href="login.html">Login</a>
 					<a href="cadastro.html">Cadastro</a>
@@ -164,11 +167,11 @@
 		<p id="legenda">Para cadastrar um animal no site, é necessário preencher todas as informações abaixo e ter o seu
 			perfil pessoal completo.</p>
 
-		<div id="position">
+		<div id="posicao">
 			
 			<form onsubmit="return false;" id="MyForm" enctype="multipart/form-data">
 
-				<img src="imagens/icon_upload.png" id="imagem" width="65px">
+				<img src="imagens/icon_upload.png" id="imagem" id="txtfoto" width="65px">
 				<input id="arquivo" name="file" type="file">
 				<label id="txtfoto">Selecione uma foto do pet</label><br>
 
@@ -181,47 +184,38 @@
 				<label for="campoDesc">Descreva o animal brevemente:</label><br>
 				<textarea id="campoDesc" rows="5" cols="33" required="" maxlength="300"></textarea><br><br>
 
-				<span class="linha">
+				<label>Sexo:</label><br>
+				<label for="campoSexo" class="dif">
+					<input type="radio" name="sexo" value="F" id="campoSexo" required="required">Fêmea
+				</label>
+				<label for="campoSexo2" class="dif">
+					<input type="radio" name="sexo" value="M" id="campoSexo2" required="required">Macho
+				</label><br>
+					
+				<label>É castrado?</label><br>
+				<label for="campoCast" class="dif">
+					<input type="radio" name="castracao" value="S" id="campoCast" required="required">Sim
+				</label>
+				<label for="campoCast2" class="dif">	
+					<input type="radio" name="castracao" value="N" id="campoCast2" required="required">Não
+				</label><br>
 
-					<div class="linha-sexo">
-						<label>Sexo:</label><br>
-						<label for="campoSexo" class="dif">
-							<input type="radio" name="sexo" value="F" id="campoSexo" required="required">Fêmea
-						</label>
-						<label for="campoSexo" class="dif">
-							<input type="radio" name="sexo" value="M" id="campoSexo" required="required">Macho
-						</label><br>
-					</div>
-
-					<div class="linha-cast">
-						<label>É castrado?</label><br>
-						<label for="campoCast" class="dif">
-							<input type="radio" name="castracao" value="S" id="campoCast" required="required">Sim
-						</label>
-						<label for="campoCast" class="dif">	
-							<input type="radio" name="castracao" value="N" id="campoCast" required="required">Não
-						</label><br>
-					</div>
-
-					<div class="linha-vacinas">
-						<label>É vacinado?</label><br>
-						<label for="campoVacinas" class="dif">
-							<input type="radio" name="vacinas" value="S" id="campoVacinas" required="required">Sim
-						</label>
-						<label for="campoVacinas" class="dif">
-							<input type="radio" name="vacinas" class="dif" id="campoVacinas" value="N" required="required">Não
-						</label><br>
-					</div>	
-
-				</span>							
+				<label>É vacinado?</label><br>
+				<label for="campoVacinas" class="dif">
+					<input type="radio" name="vacinas" value="S" id="campoVacinas" required="required">Sim
+				</label>
+				<label for="campoVacinas2" class="dif">
+					<input type="radio" name="vacinas" class="dif" id="campoVacinas2" value="N" required="required">Não
+				</label><br>						
 			
 				<button id="btnSubmit">Enviar</button>
 
 			</form>
 
-		</div> <!-- Position -->
+		</div> <!-- Posição -->
 
 	</div> <!-- Branco -->
 
 	<script src="js/meuscript.js"></script>
+
 </body>
