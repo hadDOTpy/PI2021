@@ -133,10 +133,16 @@
 			margin-right: 30px;
 		}
 		#dir {
-			width: 57%;
+			width: 50%;
 			display: inline-block;
 			vertical-align: top;
 			font-size: 20px;
+			background-color: #b3cfaf;
+			padding: 0px 15px;
+			border-radius: 3px;
+		}
+		#dir p {
+			margin-bottom: 30px;
 		}
 		.btadotar {
 			font-size: 20px;
@@ -149,15 +155,19 @@
 			cursor: pointer;
 		}
 		#infocl {
-			font-size: 16px;
+			font-size: 15px;
 			/*margin-bottom: 30px;*/
 			padding: 10px 5px;
-			margin-top: 37px;
+			margin-top: 30px;
 			border: 2px solid #b3cfaf;
 			border-radius: 5px;
 		}
 		#infocl p {
 			margin: 6px;
+		}
+		#img_pet {
+			padding: 5px 5px;
+			background-color: #b3cfaf;
 		}
 	</style>
 </head>
@@ -206,22 +216,23 @@
 		<div id="janela">
 			<a href="#fechar" title="Fechar" class="fechar">x</a>
 			<div id="esq">
-				<img src="http://localhost:5000/get_image/5" id="img_pet" style= width="200" height="200">
+				<img src="" id="img_pet" style= width="200" height="200">
 				<div>
 					<p style="font-size: 20px; text-align: center; margin-top: 10px;" id="nome_pet">Nome</p>
 				</div>
 				<div id="infocl">
-					<p>Doador: xxxx</p>
-					<p>Telefone: xxxxxxxx</p>
-					<p>E-mail: xxxxx</p>
+					<p>Doador: <span id="nome_user"></span></p>
+					<p>Telefone: <span id="tel_user"></span></p>
+					<p>E-mail: <span id="email_user"></span></p>
+					<p>Endereço: <span id="cdd_user"></span>, <span id="std_user"></span></p>
 				</div>
 			</div>
 			<div id="dir">
-				<p>Sou castrado? <span id="cast_pet" style="color: #6c8269;"></span></p>
-				<p>Sou vacinado? <span id="vac_pet" style="color: #6c8269;"></span></p>
-				<p>Sou do sexo <span id="sexo_pet" style="color: #6c8269;"></span></p>
-				<p>Tenho <span id="idade_pet" style="color: #6c8269;"></span> aninho(s)</p>
-				<p>Sobre mim: <span id="desc_pet" style="color: #6c8269;"></span></p>
+				<p>Sou castrado? <span id="cast_pet" style="color: white;"></span>. </p>
+				<p>Sou vacinado? <span id="vac_pet" style="color: white;"></span>. </p>
+				<p>Sou do sexo <span id="sexo_pet" style="color: white;"></span>. </p>
+				<p>Tenho <span id="idade_pet" style="color: white;"></span> aninho(s).</p>
+				<p>Sobre mim: <span id="desc_pet" style="color: white;"></span></p>
 			</div>
 		</div>
 	</div>
