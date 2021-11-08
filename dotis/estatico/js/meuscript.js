@@ -110,39 +110,74 @@ $(function () { // quando o documento estiver pronto/carregado
             }    
         });
             function modal(pet) {
-                // var i = $('img, #img_id').val();
-                // alert(i);
+
                 $('#nome_pet').text(pet.nome);
-                $('#cast_pet').text(pet.castracao);
-                $('#vac_pet').text(pet.vacinas);
+                $('#cast_pet').text((pet.castracao == 'S') ? 'Sim' : 'Não');
+                $('#vac_pet').text((pet.vacinas == 'S') ? 'Sim' : 'Não');
                 $('#idade_pet').text(pet.idade);
-                $('#sexo_pet').text(pet.sexo);
+                $('#sexo_pet').text((pet.sexo == 'F') ? 'feminino' : 'masculino');
                 $('#desc_pet').text(pet.descricao);
-
-                // lin =
-                //     '<div id="janela">' +
-                //     '   <a href="#fechar" title="Fechar" class="fechar">x</a>' +
-                //     '   <div id="esq">' +
-                //     '       <img src="imagens/cat.jpg" style= width="200" height="200">' +
-                //     '       <div>' +
-                //     '           <p style="font-size: 20px; text-align: center; margin-top: 10px;">' + pets[i].nome + '</p>' +
-                //     '       </div>' +
-                //     '       <div id="infocl">' +
-                //     '           <p>Doador: xxxx</p>' +
-                //     '           <p>Telefone: xxxxxxxx</p>' +
-                //     '           <p>E-mail: xxxxx</p>' +
-                //     '           </div>' +
-                //     '   </div>' +
-                //     '   <div id="dir">' +
-                //     '       <p>Sou castrado? ' + pets[i].castracao + '</p>' +
-                //     '       <p>Sou vacinado? ' + pets[i].vacinas + '</p>' +
-                //     '       <p>Sou do sexo ' + pets[i].sexo + '</p>' +
-                //     '       <p>Tenho ' + pets[i].idade + ' aninho(s)</p>' +
-                //     '       <p>Sobre mim: ' + pets[i].desc + '</p>' +
-                //     '       </div>' +
-                //     '</div>' +
-
-                // $('#abrirModal').append(lin);
+                $('#img_pet').attr('src', 'http://localhost:5000/get_image/' + pet.id);
             }
+        $.ajax({
+            url: 'http://localhost:5000/get_user/3',
+            method: 'GET',
+            dataType: 'json', // os dados são recebidos no formato json
+            success: info_user, // chama a função modal para processar o resultado
+            error: function () {
+                alert("erro ao ler dados, verifique o backend");
+            }    
+        });
+            function info_user(user) {
+
+                $('#nome_user').text(user.nome);
+                $('#tel_user').text(user.fone);
+                $('#email_user').text(user.email);
+                $('#cdd_user').text(user.cidade);
+                $('#std_user').text(user.estado);
+            }
+    });
+    $(document).on("click", "#btnSubmit", function () {
+
+        nome = $("#campoNome").val();
+        email = $("#campoEmail").val();
+        estado = $("#campoUF").val();
+        cidade = $("#campoCdd").val();
+        fone = $("#campoTel").val();
+        senha = $("#campoSenha").val();
+
+        var dados = JSON.stringify({ nome: nome, email: email, estado: estado, cidade: cidade, fone: fone , senha: senha});
+
+        // fazer requisição para o back-end
+        $.ajax({
+            url: 'http://localhost:5000/inserir_user',
+            type: 'POST',
+            dataType: 'json', // os dados são recebidos no formato json
+            contentType: 'application/json', // tipo dos dados enviados
+            data: dados, // estes são os dados enviados
+            success: userInserido,
+            error: erroAoInserir
+        });
+
+        function userInserido(retorno) {
+            if (retorno.resultado == "ok") { // a operação deu certo?
+                // informar resultado de sucesso
+                alert("Usuário incluído com sucesso!");
+                // limpar os campos
+                $("#campoNome").val("");
+                $("#campoEmail").val("");
+                $("#campoUF").val("");
+                $("#campoCdd").val("");
+                $("#campoTel").val("");
+                $("#campoSenha").val("");
+            } else {
+                // informar mensagem de erro
+                alert(retorno.resultado + ":" + retorno.detalhes);
+            }
+        }
+        function erroAoInserir(retorno) {
+            // informar mensagem de erro
+            alert("ERRO: " + retorno.resultado + ":" + retorno.detalhes);
+        }
     });
 });
