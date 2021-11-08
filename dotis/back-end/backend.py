@@ -80,4 +80,9 @@ def get_image(pet_id):
 # def index():
 #     return render_template('index.html', titulo='Dotis')
 
+@app.route('/get_pet/<int:pet_id>')
+def get_pet(pet_id):
+    pet = db.session.query(Pet).get(pet_id)
+    return jsonify(pet.json())
+
 app.run(debug = True)
