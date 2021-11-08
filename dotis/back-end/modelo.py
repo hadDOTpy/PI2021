@@ -7,6 +7,7 @@ class Usuario(db.Model):
 	estado = db.Column(db.String(254))
 	cidade = db.Column(db.String(254))
 	fone = db.Column(db.String(254))
+	senha = db.Column(db.String(254))
 
 	def json(self):
 		return {
@@ -16,6 +17,7 @@ class Usuario(db.Model):
 			"estado" : self.estado,
 			"cidade" : self.cidade,
 			"fone" : self.fone,
+			"senha" : self.senha
 		}        
 
 class Pet(db.Model):
@@ -40,37 +42,37 @@ class Pet(db.Model):
 			"descricao" : self.desc
 		}
 
-class Publicacao(db.Model):
-	id = db.Column(db.Integer, primary_key = True)
-	data = db.Column(db.Date)
-	id_user = db.Column(db.Integer, db.ForeignKey(Usuario.id))
-	id_pet = db.Column(db.Integer, db.ForeignKey(Pet.id))
-	usuario = db.relationship("Usuario")
-	pet = db.relationship("Pet")
+# class Publicacao(db.Model):
+# 	id = db.Column(db.Integer, primary_key = True)
+# 	data = db.Column(db.Date)
+# 	id_user = db.Column(db.Integer, db.ForeignKey(Usuario.id))
+# 	id_pet = db.Column(db.Integer, db.ForeignKey(Pet.id))
+# 	usuario = db.relationship("Usuario")
+# 	pet = db.relationship("Pet")
 
-	def json(self):
-		return {
-			"id" : self.id,
-			"data" : self.data,
-			"id_user" : self.id_user,
-			"id_pet" : self.id_pet
-		}
+# 	def json(self):
+# 		return {
+# 			"id" : self.id,
+# 			"data" : self.data,
+# 			"id_user" : self.id_user,
+# 			"id_pet" : self.id_pet
+# 		}
 
-class Adocao(db.Model):
-	id = db.Column(db.Integer, primary_key = True)
-	data = db.Column(db.Date)
-	id_user = db.Column(db.Integer, db.ForeignKey(Usuario.id))
-	id_pet = db.Column(db.Integer, db.ForeignKey(Pet.id))
-	usuario = db.relationship("Usuario")
-	pet = db.relationship("Pet")
+# class Adocao(db.Model):
+# 	id = db.Column(db.Integer, primary_key = True)
+# 	data = db.Column(db.Date)
+# 	id_user = db.Column(db.Integer, db.ForeignKey(Usuario.id))
+# 	id_pet = db.Column(db.Integer, db.ForeignKey(Pet.id))
+# 	usuario = db.relationship("Usuario")
+# 	pet = db.relationship("Pet")
 
-	def json(self):
-		return {
-			"id" : self.id,
-			"data" : self.data,
-			"id_user" : self.id_user,
-			"id_pet" : self.id_pet
-		}
+# 	def json(self):
+# 		return {
+# 			"id" : self.id,
+# 			"data" : self.data,
+# 			"id_user" : self.id_user,
+# 			"id_pet" : self.id_pet
+# 		}
 
 if __name__ == "__main__":
 	# apagar o arquivo, se houver
@@ -81,16 +83,16 @@ if __name__ == "__main__":
 	db.create_all()
 
 	# teste da classe Pet
-	p1 = Pet(nome = "Max", foto = "gato.png", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
-	p2 = Pet(nome = "Felice", foto = "gato1.jpg", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno") 
-	p3 = Pet(nome = "Bob", foto = "gato2.jpg", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
-	p4 = Pet(nome = "Pip", foto = "gato3.jpg", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno")
-	p5 = Pet(nome = "Neve", foto = "gato4.jpg", idade = 2, sexo = "M", castracao = "N", vacinas = "S", desc = "cachorro de porte médio")
-	p6 = Pet(nome = "Dog", foto = "gato5.jpeg", idade = 4, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno")
+	p1 = Pet(nome = "Max", foto = "gato.png", idade = 1, sexo = "M", castracao = "N", vacinas = "S", desc = "gato pequeno, gosta de brincar e é muito carinhoso.")
+	p2 = Pet(nome = "Felice", foto = "gato1.jpg", idade = 4, sexo = "F", castracao = "S", vacinas = "N", desc = "gato quieto e independente.") 
+	p3 = Pet(nome = "Bob", foto = "gato2.jpg", idade = 8, sexo = "M", castracao = "N", vacinas = "S", desc = "gato grande, muito carente, porém medroso.")
+	p4 = Pet(nome = "Pip", foto = "gato3.jpg", idade = 4, sexo = "F", castracao = "S", vacinas = "N", desc = "gato pequeno, gosta de brinquedos de arranhar.")
+	p5 = Pet(nome = "Neve", foto = "gato4.jpg", idade = 10, sexo = "M", castracao = "N", vacinas = "S", desc = "gato grande, se dá muito bem com crianças e outros animais.")
+	p6 = Pet(nome = "Dog", foto = "gato5.jpeg", idade = 1, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno, gosta de carinho nas orelhas e petiscos de frango.")
 
-	u1 = Usuario(nome = "João", email = "joão@gmail.com", estado = "SC", cidade = "Blumenau", fone = "(47)99999-9999")
-	u2 = Usuario(nome = "Gabriela", email = "gabi@gmail.com", estado = "SP", cidade = "Tremembé", fone = "(47)99999-0000")
-	u3 = Usuario(nome = "Marta", email = "marta@gmail.com", estado = "SC", cidade = "Timbó", fone = "(47)90000-9999")
+	u1 = Usuario(nome = "João", email = "joão@gmail.com", estado = "SC", cidade = "Blumenau", fone = "(47)99999-9999", senha = "senhasecreta")
+	u2 = Usuario(nome = "Gabriela", email = "gabi@gmail.com", estado = "SP", cidade = "Tremembé", fone = "(47)99999-0000", senha = "senha")
+	u3 = Usuario(nome = "Marta", email = "marta@gmail.com", estado = "SC", cidade = "Timbó", fone = "(47)90000-9999", senha = "supersenha")
 
 	# persistir
 	db.session.add(p1)

@@ -85,4 +85,9 @@ def get_pet(pet_id):
     pet = db.session.query(Pet).get(pet_id)
     return jsonify(pet.json())
 
+@app.route('/get_user/<int:user_id>')
+def get_user(user_id):
+    user = db.session.query(Usuario).get(user_id)
+    return jsonify(user.json())
+
 app.run(debug = True)
