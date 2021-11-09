@@ -57,7 +57,7 @@
 			width: 100%;
 		}
 
-		#btnSubmit {
+		#btnCadastro {
 			width: 100%;
 			height: 35px;
 			left: 97px;
@@ -158,7 +158,7 @@
 
 		<div class="posicao">
 
-			<form onsubmit= "return false;" id = "MyForm">
+			<form onsubmit= "return false;" id = "Formy">
 		
 				<label for="campoNome">Nome:</label><br>
 				<input type="text" id="campoNome"required="required"><br>
@@ -180,12 +180,12 @@
 
 				<div class="select-estiloso">
 
-				<select>
-					<option value="--">Selecione uma opção</option>
-					<option value="SC">Santa Catarina</option>
-					<option value="PR">Paraná</option>
-					<option value="RS">Rio Grande do Sul</option>
-				</select>
+					<select id="ufvalue">
+						<option value="--">Selecione uma opção</option>
+						<option value="SC">Santa Catarina</option>
+						<option value="PR">Paraná</option>
+						<option value="RS">Rio Grande do Sul</option>
+					</select>
 
 				</div>
 
@@ -194,13 +194,13 @@
 
 				<div class="select-estiloso">
 
-					<select>
+					<select id="cddvalue">
 						<option value="Teste">Teste.</option>
 					</select>
 
 				</div>
 
-				<button id="btnSubmit">Enviar</button>
+				<button id="btnCadastro">Enviar</button>
 			
 			</form>
 
@@ -208,6 +208,7 @@
 
 	</div>
 
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 	<script src="js/meuscript.js"></script>
 
 </body>
