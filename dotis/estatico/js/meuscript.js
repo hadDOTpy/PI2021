@@ -137,7 +137,12 @@ $(function () { // quando o documento estiver pronto/carregado
                 $('#std_user').text(user.estado);
             }
     });
-    $(document).on("click", "#btnSubmit", function () {
+    $(document).on("click", "#btnCadastro", function () {
+
+        var a = document.getElementById("ufvalue");
+        var ufvalue = a.options[a.selectedIndex].value;
+        var b = document.getElementById("cddvalue");
+        var cddvalue = b.options[b.selectedIndex].value;
 
         nome = $("#campoNome").val();
         email = $("#campoEmail").val();
@@ -146,7 +151,7 @@ $(function () { // quando o documento estiver pronto/carregado
         fone = $("#campoTel").val();
         senha = $("#campoSenha").val();
 
-        var dados = JSON.stringify({ nome: nome, email: email, estado: estado, cidade: cidade, fone: fone , senha: senha});
+        var dados = JSON.stringify({ nome: nome, email: email, estado: ufvalue, cidade: cddvalue, fone: fone , senha: senha});
 
         // fazer requisição para o back-end
         $.ajax({
