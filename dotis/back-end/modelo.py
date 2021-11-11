@@ -1,7 +1,10 @@
+from enum import unique
+from flask_login.mixins import UserMixin
 from config import *
 
-class Usuario(db.Model):
+class Usuario(UserMixin, db.Model):
 	id = db.Column(db.Integer, primary_key = True)
+	user = db.Column(db.String(254), unique=True)
 	nome = db.Column(db.String(254))
 	email = db.Column(db.String(254))
 	estado = db.Column(db.String(254))
@@ -12,6 +15,7 @@ class Usuario(db.Model):
 	def json(self):
 		return {
 			"id" : self.id,
+			"user" : self.user,
 			"nome" : self.nome,
 			"email" : self.email,
 			"estado" : self.estado,
@@ -90,9 +94,9 @@ if __name__ == "__main__":
 	p5 = Pet(nome = "Neve", foto = "gato4.jpg", idade = 10, sexo = "M", castracao = "N", vacinas = "S", desc = "gato grande, se dá muito bem com crianças e outros animais.")
 	p6 = Pet(nome = "Dog", foto = "gato5.jpeg", idade = 1, sexo = "F", castracao = "S", vacinas = "S", desc = "gato pequeno, gosta de carinho nas orelhas e petiscos de frango.")
 
-	u1 = Usuario(nome = "João", email = "joão@gmail.com", estado = "SC", cidade = "Blumenau", fone = "(47)99999-9999", senha = "senhasecreta")
-	u2 = Usuario(nome = "Gabriela", email = "gabi@gmail.com", estado = "SP", cidade = "Tremembé", fone = "(47)99999-0000", senha = "senha")
-	u3 = Usuario(nome = "Marta", email = "marta@gmail.com", estado = "SC", cidade = "Timbó", fone = "(47)90000-9999", senha = "supersenha")
+	u1 = Usuario(user = "Joaozinho", nome = "João", email = "joão@gmail.com", estado = "SC", cidade = "Blumenau", fone = "(47)99999-9999", senha = "senhasecreta")
+	u2 = Usuario(user = "Gabi", nome = "Gabriela", email = "gabi@gmail.com", estado = "SP", cidade = "Tremembé", fone = "(47)99999-0000", senha = "senha")
+	u3 = Usuario(user = "martinha", nome = "Marta", email = "marta@gmail.com", estado = "SC", cidade = "Timbó", fone = "(47)90000-9999", senha = "supersenha")
 
 	# persistir
 	db.session.add(p1)
@@ -109,5 +113,4 @@ if __name__ == "__main__":
 	# exibir a pessoa no format json
 	print(p5.json())
 	print(u3.json())
-
 
