@@ -1,7 +1,8 @@
 body {
 		background-color: #D3D3D3;
 }
-.menu {
+
+#menu {
 	background-color: white;
 	position: absolute;
 	width: 100%;
@@ -12,11 +13,26 @@ body {
 	display: inline-flex;
 	box-shadow: 0 0 1em rgba(0,0,0,0.5);
 }
-.item {
+
+#logo {
+	margin-left: 10%;
+}
+
+#marca {
+	padding-left: 0.3%;
+	line-height: 0%;
+	margin-right: 15px;
+	font-size: 43px;
+	color: #6c8269;
+	font-family: 'Parisienne', cursive;
+}
+
+#item {
 	height: 60px;
     overflow: hidden;
 }
-.listaul {
+
+#listaul {
 	padding-top: 20px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -33,25 +49,16 @@ body {
     padding-left: 21px;
     padding-right: 21px;
 }
-.logo {
-	margin-left: 10%;
-	/*margin-top: 0.5%;*/
-}
-.title {
-	padding-left: 0.3%;
-	line-height: 0%;
-	margin-right: 15px;
-	font-size: 43px;
-	color: #6c8269;
-	font-family: 'Parisienne', cursive;
-}
+
 .listali:hover {
 	background-color: #b3cfaf;
 }
+
 .dropdown {
 	margin-left: 35%;
     border: none;
 }
+
 .conteudodropdown {
 	display: none;
 	position: absolute;
@@ -62,9 +69,11 @@ body {
 	font-family: 'Libre Franklin', sans-serif;
 	z-index: 1
 }
-.img_profile {
+
+#img_profile {
     margin-left: 100%;
 }
+
 .conteudodropdown a {
   	color: black;
   	padding: 10px 14px;
@@ -73,16 +82,20 @@ body {
   	text-align: center;
   	font-size: 15px
 }
-.dropdown:hover .conteudodropdown {
-	display: block;
-}
+
 .conteudodropdown a:hover {
 	background-color: #9ec299;
 }
+
+.dropdown:hover .conteudodropdown {
+	display: block;
+}
+
 a {
 	text-decoration: none;
 	color: black;
 }
+
 a:visitor {
 	color: black;
 }
