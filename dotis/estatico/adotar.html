@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
 	<title>Dotis</title>
 	<meta charset="utf-8">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -9,20 +10,19 @@
 	<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
 	<link href="estilos/estilo.css" rel="stylesheet">
 	<style type="text/css">
-		body, html {
-			height: 100%;
-		}
+		
+		/* Padrão em todas as páginas */
 		#branco {
 			position: absolute;
 			width: 80%;
-			/*height: 100%;*/
 			background-color: white;
 			top: 17%;
 			left: 10%;
 			border-radius: 5px;
 			box-shadow: 0 0 1em rgba(0,0,0,0.3);
 		}
-		#titulo {
+
+		.titulo {
 			margin-top: 20px;
 			margin-left: 2%;
 			background-color: #b3cfaf;
@@ -32,13 +32,16 @@
 			padding-top: 0.2px;
 			padding-bottom: 0.2px;
 		}
+
 		#legenda {
 			margin-left: 2%;
 			margin-right: 2%;
 			font-family: 'Libre Franklin', sans-serif;
 			font-size: 20px;
-			text-style: bold;
 		}
+		/* Fim do padrão */ 
+
+		/* Exclusivo adotar */
 		.grid {
 			display: grid;
 			grid-template-columns: repeat(4, 25%);
@@ -171,13 +174,20 @@
 		}
 	</style>
 </head>
+
 <body>
+
 	<nav>
-		<div class="menu">
-         <img src="imagens/logo_pequena.png" class="logo" alt="logo de gato" width="50" height="50">
-			<h1><a href="index.html" class="title">Dotis</a></h1>
-			<div class="item">
-				<ul class="listaul">
+
+		<div id="menu">
+
+        <img src="imagens/logo_pequena.png" id="logo" alt="logo de gato" width="50" height="50">
+
+		<h1><a href="index.html" id="marca">Dotis</a></h1>
+
+			<div id="item">
+
+				<ul id="listaul">
 					<li class="listali">
 						<a href="adotar.html">ADOTAR</a>
 					</li>
@@ -185,21 +195,34 @@
 						<a href="doar.html">DOAR</a>
 					</li>
 				</ul>
-			</div>
+
+			</div> <!-- Item -->
+
 			<div class="dropdown">
-				<img src="imagens/icon_profile.png" class="img_profile" alt="pessoa">
+
+				<img src="imagens/icon_profile.png" id="img_profile" alt="pessoa">
+
 				<div class="conteudodropdown">
 					<a href="#">Login</a>
     				<a href="cadastro.html">Cadastro</a>
-				</div>
-			</div>
-		</div>
+				</div> <!-- Conteúdo Dropdown -->
+
+			</div> <!-- dropdown -->
+
+		</div> <!-- Menu -->
+
 	</nav>
+
 	<div id="branco">
-		<div id="titulo">
-			<h1 id="titulo">Encontre seu futuro pet</h1>
-		</div>
-		<p id="legenda">Clique no animal que preferir para ler mais informações sobre ele.</p>
+
+		<div class="titulo">
+
+			<h1 class="titulo">Encontre seu futuro pet</h1>
+
+		</div> <!-- Titulo -->
+
+		<p id="legenda">Clique no animal que preferir para ler mais informações sobre ele.</p> <!-- Fim do padrão -->
+
 		<div class="grid" id="grid_pet">
 			<!-- <div class="polaroid">
 				<div class="pic_block">
@@ -209,34 +232,50 @@
 				<p>Nome</p>
 				</div>
 			</div> -->
-		</div>
+		</div> <!-- Grid, grid_pet -->
 		
-	</div>
+	</div> <!-- Branco -->
+
 	<div id="abrirModal" class="modal">
+
 		<div id="janela">
+
 			<a href="#fechar" title="Fechar" class="fechar">x</a>
+
 			<div id="esq">
+
 				<img src="" id="img_pet" style= width="200" height="200">
+
 				<div>
 					<p style="font-size: 20px; text-align: center; margin-top: 10px;" id="nome_pet">Nome</p>
 				</div>
+
 				<div id="infocl">
+
 					<p>Doador: <span id="nome_user"></span></p>
 					<p>Telefone: <span id="tel_user"></span></p>
 					<p>E-mail: <span id="email_user"></span></p>
 					<p>Endereço: <span id="cdd_user"></span>, <span id="std_user"></span></p>
-				</div>
-			</div>
+
+				</div> <!-- Infocl -->
+
+			</div> <!-- Esquerda -->
+
 			<div id="dir">
+
 				<p>Sou castrado? <span id="cast_pet" style="color: white;"></span></p>
 				<p>Sou vacinado? <span id="vac_pet" style="color: white;"></span></p>
 				<p>Sou do sexo <span id="sexo_pet" style="color: white;"></span></p>
 				<p>Tenho <span id="idade_pet" style="color: white;"></span> aninho(s)</p>
 				<p>Sobre mim: <span id="desc_pet" style="color: white;"></span></p>
-			</div>
-		</div>
-	</div>
+
+			</div> <!-- Direita -->
+
+		</div> <!-- Janela -->
+
+	</div> <!-- Abrir_modal, modal -->
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 	<script src="js/meuscript.js"></script>
+	
 </body>

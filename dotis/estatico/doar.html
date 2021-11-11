@@ -25,7 +25,7 @@
 			box-shadow: 0 0 1em rgba(0, 0, 0, 0.3);
 		}
 
-		#titulo {
+		.titulo {
 			margin-top: 20px;
 			margin-left: 2%;
 			background-color: #b3cfaf;
@@ -52,6 +52,10 @@
 			margin-bottom: 25px;
 		}
 
+		label {
+			font-family: 'Libre Franklin', sans-serif;
+		}
+
 		input[type=text] {
 			margin-top: 6px;
 			margin-bottom: 11px;
@@ -59,6 +63,18 @@
 			font-family: 'Libre Franklin', sans-serif;
 			font-size: 15px;
 			width: 100%;
+		}
+
+		#btnSubmit {	
+			width: 30.5%;
+			height: 35px;
+			font-family: 'Libre Franklin', sans-serif;
+			margin-top: 6px;
+			margin-left: 35%;
+		}
+
+		form { 
+			width: 60%; 
 		}
 
 		textarea {
@@ -72,21 +88,9 @@
 			padding: 1% 1% ;
 		}
 
-		label {
-			font-family: 'Libre Franklin', sans-serif;
-		}
-
 		input[type=radio] {
 			margin-top: 10px;
 			margin-bottom: 20px;
-		}
-
-		#btnSubmit {	
-			width: 30.5%;
-			height: 35px;
-			font-family: 'Libre Franklin', sans-serif;
-			margin-top: 6px;
-			margin-left: 35%;
 		}
 
 		input[type=file] {
@@ -98,15 +102,11 @@
 			cursor: pointer;
 		}
 
-		form { 
-		width: 60%; 
-		}
-
-		#txtfoto {
+		.txtfoto {
 			position: relative;
 			font-family: 'Libre Franklin', sans-serif;
 			font-size: 17px;
-			margin-left:15px
+			margin-left:15px;
 		}
 
 		#imagem {
@@ -114,23 +114,21 @@
 			margin-top: 0px;
 		}
 
-		
-
 	</style>
 </head>
 
 <body>
 	<nav> <!-- Padrão em todos -->
 
-		<div class="menu">
+		<div id="menu">
 
-			<img src="imagens/logo_pequena.png" class="logo" alt="logo de gato" width="50" height="50">
+			<img src="imagens/logo_pequena.png" id="logo" alt="logo de gato" width="50" height="50">
 
-			<h1><a href="index.html" class="title">Dotis</a></h1>
+			<h1><a href="index.html" id="marca">Dotis</a></h1>
 
-			<div class="item">
+			<div id="item">
 
-				<ul class="listaul">
+				<ul id="listaul">
 					<li class="listali">
 						<a href="adotar.html">ADOTAR</a>
 					</li>
@@ -143,7 +141,7 @@
 
 			<div class="dropdown">
 
-				<img src="imagens/icon_profile.png" class="img_profile" alt="pessoa">
+				<img src="imagens/icon_profile.png" id="img_profile" alt="pessoa">
 
 				<div class="conteudodropdown">
 					<a href="login.html">Login</a>
@@ -156,11 +154,11 @@
 
 	</nav>
 	
-	<div id="branco">
+	<div id="branco"> 
 
-		<div id="titulo">
+		<div class="titulo">
 
-			<h1 id="titulo">Doe um Animal</h1>
+			<h1 class="titulo">Doe um Animal</h1>
 
 		</div> <!-- Titulo -->
 
@@ -169,11 +167,11 @@
 
 		<div id="posicao">
 			
-			<form onsubmit="return false;" id="MyForm" enctype="multipart/form-data">
+			<form onsubmit="return false;" id="MyForm" enctype="multipart/form-data"> <!-- Fim do padrão -->
 
-				<img src="imagens/icon_upload.png" id="imagem" id="txtfoto" width="65px">
+				<img src="imagens/icon_upload.png" id="imagem"  width="65px">
 				<input id="arquivo" name="file" type="file">
-				<label id="txtfoto">Selecione uma foto do pet</label><br>
+				<label for="imagem" class="txtfoto">Selecione uma foto do pet</label><br>
 
 				<label for="campoNome">Nome:</label><br>
 				<input type="text" id="campoNome" required="required"><br>

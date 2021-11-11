@@ -41,7 +41,7 @@
 		/* Fim do padrão */ 
 
 		/* Padrão formulário */
-		.posicao {
+		#posicao {
 			margin-left: 21%;
 			width: 100%;
 			margin-top: 20px;
@@ -60,6 +60,7 @@
 			width: 100%;
 			font-size: 15px;
 		}
+
 		#btnSubmit {
 			width: 30.5%;
 			height: 35px;
@@ -74,19 +75,20 @@
 
 	</style>
 </head>
+
 <body>
 
-	<nav>
+	<nav> <!-- Padrão em todos -->
 
-		<div class="menu">
+		<div id="menu">
 
-         <img src="imagens/logo_pequena.png" class="logo" alt="logo de gato" width="50" height="50">
+	        <img src="imagens/logo_pequena.png" id="logo" alt="logo de gato" width="50" height="50">
 
-			<h1><a href="index.html" class="title">Dotis</a></h1>
+			<h1><a href="index.html" id="marca">Dotis</a></h1>
 
-			<div class="item">
+			<div id="item"> 
 
-				<ul class="listaul">
+				<ul id="listaul">
 					<li class="listali">
 						<a href="adotar.html">ADOTAR</a>
 					</li>
@@ -95,36 +97,36 @@
 					</li>
 				</ul>
 
-			</div>
+			</div> <!-- Item -->
 
 			<div class="dropdown">
 
-				<img src="imagens/icon_profile.png" class="img_profile" alt="pessoa">
+				<img src="imagens/icon_profile.png" id="img_profile" alt="pessoa">
 
 				<div class="conteudodropdown">
 					<a href="login.html">Login</a>
-    				<a href="cadastro.html">Cadastro</a>
-				</div>
+	    			<a href="cadastro.html">Cadastro</a>
+				</div> <!-- Conteúdo Dropdown -->
 
-			</div>
+			</div> <!-- Dropdown -->
 
-		</div>
+		</div> <!-- Menu -->
 
-	</nav>
+	</nav> 
 
-	<div id="branco">
+	<div id="branco"> 
 
-		<div class="titulo">
+		<div class="titulo"> 
 
 			<h1 class="titulo">Login</h1>
 
-		</div>
+		</div> <!-- Titulo -->
 
 		<p id="legenda">Acesse sua conta para ter acesso ao seu perfil.</p>
 
-		<div class="posicao">
+		<div id="posicao">
 
-			<form>	
+			<form> <!-- Fim do padrão -->	
 
 				<label for="campoEmail">Email:</label><br>
 				<input type="email" id="campoEmail" required="required" style="margin-bottom: 15px;"><br>
