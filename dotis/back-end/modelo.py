@@ -1,8 +1,7 @@
 from enum import unique
-from flask_login.mixins import UserMixin
 from config import *
 
-class Usuario(UserMixin, db.Model):
+class Usuario(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
 	user = db.Column(db.String(254), unique=True)
 	nome = db.Column(db.String(254))
