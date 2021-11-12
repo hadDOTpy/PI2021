@@ -144,6 +144,7 @@ $(function () { // quando o documento estiver pronto/carregado
         var b = document.getElementById("cddvalue");
         var cddvalue = b.options[b.selectedIndex].value;
 
+        user = $("#campoUser").val();
         nome = $("#campoNome").val();
         email = $("#campoEmail").val();
         estado = $("#campoUF").val();
@@ -151,7 +152,7 @@ $(function () { // quando o documento estiver pronto/carregado
         fone = $("#campoTel").val();
         senha = $("#campoSenha").val();
 
-        var dados = JSON.stringify({ nome: nome, email: email, estado: ufvalue, cidade: cddvalue, fone: fone , senha: senha});
+        var dados = JSON.stringify({ user: user, nome: nome, email: email, estado: ufvalue, cidade: cddvalue, fone: fone , senha: senha});
 
         // fazer requisição para o back-end
         $.ajax({
@@ -169,6 +170,7 @@ $(function () { // quando o documento estiver pronto/carregado
                 // informar resultado de sucesso
                 alert("Usuário incluído com sucesso!");
                 // limpar os campos
+                $("#campoUser")
                 $("#campoNome").val("");
                 $("#campoEmail").val("");
                 $("#campoUF").val("");
